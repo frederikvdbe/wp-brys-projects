@@ -1,24 +1,29 @@
-// Reminder: Keep tailwind.config.js in sync
+// Reminder: keep the @theme block in _tailwind.scss in sync
 
-$color-primary: #678475;
-$color-primary-dark: #2C3C34;
-$color-secondary: #FDCD00;
-$color-secondary-dark: #D0A800;
-$color-white: #ffffff;
-$color-black: #000000;
+$color-paper: #F3EFE6; // page background
+$color-shell: #FCFCFA; // lighter panel background
+$color-ink: #35291D;   // text and footer background
+$color-sage: #929576;  // accent green
+$color-rule: #5D513F;  // rule on the dark footer
 
 $colors: (
-	"primary": $color-primary,
-	"primary-dark": $color-primary-dark,
-	"secondary" : $color-secondary,
-	"secondary-dark" : $color-secondary-dark,
-	"white" : $color-white,
-	"black" : $color-black,
+	"paper": $color-paper,
+	"shell": $color-shell,
+	"ink": $color-ink,
+	"sage": $color-sage,
+	"rule": $color-rule,
 );
 
 :root {
 	@each $name, $value in $colors {
-		--color-#{$name} : #{$value};
-		--color#{$name}-xdark: darken()
+		--color-#{$name}: #{$value};
 	}
 }
+
+// Aliases kept so the theme boilerplate (buttons, inputs, admin) keeps compiling
+$color-primary: $color-sage;
+$color-primary-dark: $color-ink;
+$color-secondary: $color-sage;
+$color-secondary-dark: $color-ink;
+$color-white: #ffffff;
+$color-black: $color-ink;

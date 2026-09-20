@@ -1,0 +1,35 @@
+@layer components {
+	.c-site-footer {
+		background: var(--color-ink);
+		color: #ffffff;
+
+		&__logo {
+			@apply block;
+			width: 8.875rem; // 142px
+		}
+
+		&__title {
+			@apply font-display uppercase;
+
+			font-size: 1.38125rem; // 22.1px
+			line-height: 1.3125rem;
+			letter-spacing: 0.1em;
+			color: var(--color-paper);
+		}
+
+		&__list {
+			li + li {
+				margin-top: 0.875rem;
+			}
+		}
+
+		&__rule {
+			height: 1px;
+			background: var(--color-rule);
+		}
+
+		a:hover {
+			color: var(--color-sage);
+		}
+	}
+}

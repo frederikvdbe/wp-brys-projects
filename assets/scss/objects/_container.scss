@@ -5,3 +5,9 @@
 	max-width: $grid-max-width;
 }
 
+
+// Starts at the container's left edge and runs to the right edge of the viewport.
+// Use on an element that sits in a full width parent, not inside .o-container.
+.o-bleed-right {
+	margin-left: max(var(--grid-gutter), calc((100% - var(--grid-max-width)) / 2));
+}

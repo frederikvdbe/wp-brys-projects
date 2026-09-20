@@ -1,0 +1,31 @@
+@layer components {
+	// Lighter panel behind the middle of the page. The background is drawn with a
+	// pseudo element so the panel does not shift the container inside it, and so it
+	// can stop part way through the last block it covers.
+	.c-panel {
+		@apply relative;
+
+		--panel-inset-left: 2.5rem;     // 40px
+		--panel-inset-bottom: 40.6875rem; // 651px
+
+		&::before {
+			@apply absolute top-0 right-0;
+
+			content: '';
+			left: var(--panel-inset-left);
+			bottom: var(--panel-inset-bottom);
+			background: var(--color-shell);
+		}
+
+		> * {
+			@apply relative z-[1];
+		}
+	}
+}
+
+@media (width < theme(--breakpoint-xl)) {
+	.c-panel {
+		--panel-inset-left: 1rem;
+		--panel-inset-bottom: 0;
+	}
+}

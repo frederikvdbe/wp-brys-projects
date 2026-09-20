@@ -1,3 +1,6 @@
-$font-size-base: 18px;
+// The design is drawn on a 1920px frame with a 1640px container.
+// Sizes are written in rem so the whole page can scale with one root font size.
+$font-size-base: 1.21875rem; // 19.5px
 
-$font-family-primary: 'Barlow', sans-serif;
+$font-family-display: 'Newsreader', Georgia, 'Times New Roman', serif;
+$font-family-body: 'Mulish', 'Helvetica Neue', Arial, sans-serif;

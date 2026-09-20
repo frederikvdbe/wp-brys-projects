@@ -1,0 +1,42 @@
+@media (width < theme(--breakpoint-xl)) {
+	.b-detail {
+		@apply mt-24;
+
+		img {
+			@apply w-full h-auto;
+		}
+
+		// the large image keeps its portrait crop, the small one its landscape crop
+		> .o-container > div > div:first-child img {
+			aspect-ratio: 930 / 1245;
+		}
+
+		> .o-container > div > div:last-child img {
+			aspect-ratio: 362 / 485;
+		}
+
+		p {
+			@apply mt-10;
+		}
+
+		.c-link {
+			@apply mt-0;
+		}
+
+		> .o-container > div > div > div:last-child {
+			@apply mt-8;
+		}
+	}
+}
+
+@media (width < theme(--breakpoint-lg)) {
+	.b-detail {
+		> .o-container > div > div {
+			grid-column: 1 / -1;
+
+			& + div {
+				@apply mt-8;
+			}
+		}
+	}
+}

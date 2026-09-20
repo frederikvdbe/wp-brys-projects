@@ -1,13 +1,25 @@
+// The design is exact from 1768px up: there the container reaches its full 1640px.
+// Between the tablet breakpoint and 1768px the root font size shrinks with the
+// viewport, so every rem based size in the design scales along with it.
+html {
+	font-size: 16px;
+
+	@media (width >= theme(--breakpoint-xl)) and (width < 110.5rem) {
+		font-size: calc(100vw / 110.5);
+	}
+}
+
 body {
 	@apply flex flex-col;
-	@apply text-base;
 	min-height: 100vh;
 
-	font-family: $font-family-primary;
-	font-style: normal;
-	font-weight: 300;
-
-	background: #F5F5F5;
+	font-family: $font-family-body;
+	font-size: $font-size-base;
+	font-weight: 400;
+	line-height: 1.75rem;
+	color: var(--color-ink);
+	background: var(--color-paper);
 
 	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
 }

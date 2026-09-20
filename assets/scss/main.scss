@@ -54,6 +54,22 @@
 @import "components/button";
 @import "components/mobile-nav";
 @import "components/text-image";
+@import "components/site-footer";
+@import "components/link";
+@import "components/panel";
+@import "components/label";
+
+/*
+ * 6b Blocks
+ * Page blocks from partials/blocks. The desktop layout lives in the templates
+ * as tailwind classes, these files only hold the responsive steps below it.
+ */
+@import "blocks/hero";
+@import "blocks/realisaties";
+@import "blocks/statement";
+@import "blocks/detail";
+@import "blocks/toepassingen";
+@import "blocks/footer";
 
 /*
  * 7 Utilities

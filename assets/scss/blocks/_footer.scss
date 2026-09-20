@@ -1,0 +1,41 @@
+@media (width < theme(--breakpoint-xl)) {
+	.c-site-footer {
+		@apply mt-24;
+	}
+}
+
+@media (width < theme(--breakpoint-lg)) {
+	.c-site-footer {
+		> .o-container > div {
+			@apply pt-20;
+
+			> div {
+				grid-column: 1 / -1;
+
+				& + div {
+					@apply mt-12;
+				}
+			}
+		}
+
+		&__title {
+			@apply mt-0;
+		}
+
+		&__rule {
+			@apply mt-16;
+		}
+
+		> .o-container:last-child > div {
+			@apply pt-10 pb-10;
+
+			p {
+				grid-column: 1 / -1;
+
+				& + p {
+					@apply mt-4;
+				}
+			}
+		}
+	}
+}

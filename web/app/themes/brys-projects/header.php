@@ -2,11 +2,10 @@
 /**
  * @var array $args
  * @var string $header_classes
- * @var string $logo_classes
- * @var string $main_classes
  */
+$args = $args ?? array();
 extract( $args );
-$logo_classes = ! empty( $logo_classes ) ? $logo_classes : '';
+$header_classes = $header_classes ?? '';
 ?><!DOCTYPE html>
 <html <?php language_attributes(); ?>>
 <head>
@@ -18,30 +17,30 @@ $logo_classes = ! empty( $logo_classes ) ? $logo_classes : '';
 
 <body <?php body_class(); ?>>
 
-<header class="c-site-header<?php if( ! empty( $header_classes ) ) echo ' ' . $header_classes; ?>">
-	<div class="o-container flex items-center">
+<header class="c-site-header<?php if ( ! empty( $header_classes ) ) echo ' ' . $header_classes; ?>">
+	<div class="o-container">
+		<div class="c-site-header__inner pt-[0.25rem]">
 
-		<div class="c-site-header__logo">
-			<a href="<?php echo home_url(); ?>">
-				<?php get_template_part( 'partials/vectors/logo.svg' ); ?>
-			</a>
+			<div class="justify-self-start">
+				<a href="/contact" class="c-link c-link--sm">Contacteer ons</a>
+			</div>
+
+			<div class="c-site-header__logo justify-self-center">
+				<a href="<?php echo home_url(); ?>">
+					<img src="<?= get_template_directory_uri(); ?>/assets/dist/images/logo.png" width="500" height="221" alt="Brys Projects">
+				</a>
+			</div>
+
+			<button type="button" class="c-site-header__toggle js-mobile-nav-toggle justify-self-end relative top-[0.125rem]">
+				<span class="font-display text-[1.01562rem] leading-none">Menu</span>
+				<span class="c-site-header__bars">
+					<span></span>
+					<span></span>
+				</span>
+			</button>
+
 		</div>
-
-		<nav class="c-site-header__nav">
-			<?php wp_nav_menu( array(
-				'container' => false,
-				'theme_location' => 'header-nav',
-				'menu_class' => 'c-site-header__menu'
-			) ); ?>
-		</nav>
-
-		<button class="c-site-header__toggle js-mobile-nav-toggle c-hamburger hamburger  hamburger--minus" type="button">
-  			<span class="hamburger-box">
-    			<span class="hamburger-inner"></span>
-  			</span>
-		</button>
-
 	</div>
 </header>
 
-<main class="site-main<?php if( ! empty( $header_classes ) ) echo ' ' . $header_classes; ?>">
+<main class="site-main">

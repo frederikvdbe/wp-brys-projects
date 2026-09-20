@@ -1,0 +1,43 @@
+{
+  "assets/fonts/mulish-normal-latin-ext.woff2": {
+    "file": "assets/mulish-normal-latin-ext-CIWzz3jh.woff2",
+    "src": "assets/fonts/mulish-normal-latin-ext.woff2"
+  },
+  "assets/fonts/mulish-normal-latin.woff2": {
+    "file": "assets/mulish-normal-latin-Cu1hFnK4.woff2",
+    "src": "assets/fonts/mulish-normal-latin.woff2"
+  },
+  "assets/fonts/newsreader-italic-latin-ext.woff2": {
+    "file": "assets/newsreader-italic-latin-ext-BJpma-y7.woff2",
+    "src": "assets/fonts/newsreader-italic-latin-ext.woff2"
+  },
+  "assets/fonts/newsreader-italic-latin.woff2": {
+    "file": "assets/newsreader-italic-latin-DSgQPFUB.woff2",
+    "src": "assets/fonts/newsreader-italic-latin.woff2"
+  },
+  "assets/fonts/newsreader-normal-latin-ext.woff2": {
+    "file": "assets/newsreader-normal-latin-ext-D-f043e1.woff2",
+    "src": "assets/fonts/newsreader-normal-latin-ext.woff2"
+  },
+  "assets/fonts/newsreader-normal-latin.woff2": {
+    "file": "assets/newsreader-normal-latin-DBQoWVJ5.woff2",
+    "src": "assets/fonts/newsreader-normal-latin.woff2"
+  },
+  "assets/js/main.js": {
+    "file": "assets/main-DAU6UZwy.js",
+    "name": "main",
+    "src": "assets/js/main.js",
+    "isEntry": true,
+    "css": [
+      "assets/main-CHA_0OQc.css"
+    ],
+    "assets": [
+      "assets/newsreader-normal-latin-DBQoWVJ5.woff2",
+      "assets/newsreader-normal-latin-ext-D-f043e1.woff2",
+      "assets/newsreader-italic-latin-DSgQPFUB.woff2",
+      "assets/newsreader-italic-latin-ext-BJpma-y7.woff2",
+      "assets/mulish-normal-latin-Cu1hFnK4.woff2",
+      "assets/mulish-normal-latin-ext-CIWzz3jh.woff2"
+    ]
+  }
+}

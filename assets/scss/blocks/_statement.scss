@@ -1,0 +1,36 @@
+@media (width < theme(--breakpoint-xl)) {
+	.b-statement {
+		@apply mt-24;
+
+		h2 {
+			grid-column: 1 / -1;
+
+			font-size: clamp(2rem, 5vw, 4rem);
+			line-height: 1.12;
+		}
+
+		ul {
+			@apply mt-16;
+		}
+
+		h3 {
+			font-size: clamp(1.25rem, 2vw, 1.75rem);
+		}
+
+		li p {
+			@apply mt-6;
+		}
+	}
+}
+
+@media (width < theme(--breakpoint-lg)) {
+	.b-statement {
+		li {
+			grid-column: 1 / -1;
+
+			& + li {
+				@apply mt-12;
+			}
+		}
+	}
+}

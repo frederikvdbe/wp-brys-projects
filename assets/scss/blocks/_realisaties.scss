@@ -1,0 +1,41 @@
+@media (width < theme(--breakpoint-xl)) {
+	.b-realisaties {
+		@apply mt-24;
+
+		h2 {
+			font-size: clamp(1.75rem, 3.5vw, 2.5rem);
+			line-height: 1.1;
+		}
+
+		ul {
+			@apply mt-12;
+		}
+
+		img {
+			@apply h-auto;
+
+			aspect-ratio: 504 / 650;
+		}
+
+		.c-label {
+			@apply mt-6 pb-3;
+		}
+	}
+}
+
+@media (width < theme(--breakpoint-lg)) {
+	.b-realisaties {
+		// heading and link under each other
+		> .o-container > div:first-child {
+			@apply flex-col items-start gap-4;
+
+			.c-link {
+				@apply top-0;
+			}
+		}
+
+		li {
+			grid-column: 1 / -1;
+		}
+	}
+}

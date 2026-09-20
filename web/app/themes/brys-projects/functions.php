@@ -15,10 +15,9 @@ remove_action('wp_head', 'rest_output_link_wp_head', 10 );
 remove_action('wp_head', 'wp_oembed_add_discovery_links', 10 );
 add_filter('wp_resource_hints', function ($urls, $relation) {
     if ($relation !== 'dns-prefetch') return $urls;
-    $urls = array_filter($urls, function ($url) {
+    return array_filter($urls, function ($url) {
         return strpos($url, 's.w.org') === false;
     });
-    return [ 'fonts.googleapis.com' ];
 }, 0, 2);
 add_action('wp_print_styles', function (): void {
 	wp_dequeue_style('classic-theme-styles');
@@ -93,7 +92,7 @@ function setup_phpmailer_init( $phpmailer ) {
 add_filter( 'script_loader_tag', 'add_attribs_to_scripts', 10, 3 );
 function add_attribs_to_scripts( $tag, $handle, $src ) {
 
-	if(
+	if (
 		$handle == 'vite-dev' ||
 		$handle == 'main'
 	) {
@@ -103,34 +102,53 @@ function add_attribs_to_scripts( $tag, $handle, $src ) {
 	return $tag;
 }
 
+// Reads the vite manifest so the hashed build files can be enqueued
+function get_vite_manifest() {
+	static $manifest = null;
+
+	if ( $manifest === null ) {
+		$path     = get_template_directory() . '/assets/dist/.vite/manifest.json';
+		$manifest = file_exists( $path ) ? json_decode( file_get_contents( $path ), true ) : array();
+	}
+
+	return $manifest;
+}
+
 // Project enqueues
 add_action( 'wp_enqueue_scripts', 'custom_enqueue_scripts' );
 function custom_enqueue_scripts() {
 
-	// Google Fonts
-	wp_enqueue_style('google-fonts', 'https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+	$dev = defined( 'WP_DEBUG' ) && WP_DEBUG && ! empty( $_SERVER['DDEV_PRIMARY_URL'] );
 
-	if(WP_DEBUG && WP_DEBUG == true){
+	if ( $dev ) {
 
-		wp_enqueue_script('vite-dev', $_SERVER['DDEV_PRIMARY_URL'] . ':5173/@vite/client', false, null, false);
-		wp_enqueue_script('main', $_SERVER['DDEV_PRIMARY_URL'] . ':5173/assets/js/main.js', false, null, false);
-		wp_enqueue_style('styles', $_SERVER['DDEV_PRIMARY_URL'] . ':5173/assets/scss/main.scss', '', null, 'all');
+		// Vite dev server. main.js imports main.scss, so it serves the styles as well.
+		// The origin follows the scheme of the site, DDEV_PRIMARY_URL is not always https.
+		$origin = untrailingslashit( set_url_scheme( $_SERVER['DDEV_PRIMARY_URL'] ) ) . ':5173';
+
+		wp_enqueue_script( 'vite-dev', $origin . '/@vite/client', false, null, false );
+		wp_enqueue_script( 'main', $origin . '/assets/js/main.js', false, null, false );
 
 	} else {
 
-		// Custom CSS
-		//		wp_enqueue_style('styles', get_template_directory_uri() . '/assets/build/css/styles.min.css', '', null, 'all');
+		$manifest = get_vite_manifest();
+		$entry    = $manifest['assets/js/main.js'] ?? null;
+		$base     = get_template_directory_uri() . '/assets/dist/';
 
-		// Custom JS
-		//		wp_enqueue_script('scripts', get_template_directory_uri() . '/assets/build/js/scripts.min.js', false, null, true);
+		if ( $entry ) {
+			foreach ( $entry['css'] ?? array() as $index => $file ) {
+				wp_enqueue_style( 'styles' . ( $index ? '-' . $index : '' ), $base . $file, '', null, 'all' );
+			}
 
+			wp_enqueue_script( 'main', $base . $entry['file'], false, null, true );
+		}
 	}
 
 	// JS data
-	wp_localize_script('scripts', 'projectname', array(
+	wp_localize_script( 'main', 'brys', array(
 		'template_dir' => get_template_directory_uri(),
-		'ajax_url' => admin_url('admin-ajax.php')
-	));
+		'ajax_url'     => admin_url( 'admin-ajax.php' ),
+	) );
 
 }
 

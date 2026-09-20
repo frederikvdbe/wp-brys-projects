@@ -3,7 +3,8 @@ import path from 'path'
 import copy from 'rollup-plugin-copy'
 
 const port = 5173;
-const origin = `${process.env.DDEV_PRIMARY_URL}:${port}`;
+// DDEV_PRIMARY_URL is not always https, the site itself is, so force the scheme
+const origin = `${(process.env.DDEV_PRIMARY_URL || '').replace(/^http:/, 'https:')}:${port}`;
 
 const themeName = 'brys-projects';
 const themePath = path.resolve(import.meta.dirname, `web/app/themes/${themeName}`);
@@ -22,13 +23,20 @@ const fullReloadForTemplates = {
 
 // https://vitejs.dev/config/
 export default defineConfig({
+	base: '',
+	resolve: {
+		alias: {
+			'@': srcPath,
+			'~': path.resolve(import.meta.dirname, 'node_modules'),
+		}
+	},
 	build: {
 		outDir: distPath,
 		emptyOutDir: true,
+		manifest: true,
 		rollupOptions: {
 			input: {
-				scripts: `${srcPath}/js/main.js`,
-				styles: `${srcPath}/scss/main.scss`,
+				main: `${srcPath}/js/main.js`,
 			},
 		},
 	},
@@ -48,6 +56,7 @@ export default defineConfig({
 		// respond to all network requests:
 		host: '0.0.0.0',
 		port: port,
+		allowedHosts: ['.ddev.site'],
 		strictPort: true,
 		// Defines the origin of the generated asset URLs during development
 		origin: origin,
@@ -59,6 +68,7 @@ export default defineConfig({
 	plugins: [
 		fullReloadForTemplates,
 		copy({
+			hook: 'writeBundle',
 			targets: [
 				{
 					src: `${srcPath}/vectors/*`,

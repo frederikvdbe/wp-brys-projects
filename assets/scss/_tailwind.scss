@@ -2,3 +2,14 @@
 
 @source "../js/**/*.js";
 @source "../../web/app/themes/brys-projects/**/*.php";
+
+@theme {
+	--color-paper: #F3EFE6;
+	--color-shell: #FCFCFA;
+	--color-ink: #35291D;
+	--color-sage: #929576;
+	--color-rule: #5D513F;
+
+	--font-display: "Newsreader", Georgia, "Times New Roman", serif;
+	--font-body: "Mulish", "Helvetica Neue", Arial, sans-serif;
+}

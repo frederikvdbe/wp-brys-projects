@@ -1,0 +1,33 @@
+// The overlap between the heading and the image only works on a wide screen.
+@media (width < theme(--breakpoint-xl)) {
+	.b-toepassingen {
+		@apply flex flex-col-reverse mt-24;
+
+		> div:first-child {
+			@apply static w-full h-auto p-0 mt-12;
+
+			margin-left: 0;
+		}
+
+		> div:first-child img {
+			aspect-ratio: 1212 / 914;
+		}
+
+		> .o-container > div {
+			@apply pt-0 pb-0;
+		}
+
+		h2 {
+			font-size: clamp(2.25rem, 5vw, 4rem);
+			line-height: 1.1;
+		}
+
+		p {
+			@apply mt-6;
+		}
+
+		> .o-container > div > div:last-child {
+			@apply mt-10;
+		}
+	}
+}

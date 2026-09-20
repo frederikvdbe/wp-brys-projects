@@ -1,0 +1,36 @@
+// The design is only drawn for desktop. From the tablet breakpoint down the
+// image moves under the text and the heading steps back to a readable size.
+@media (width < theme(--breakpoint-xl)) {
+	.b-hero {
+		.o-container {
+			@apply flex flex-col-reverse;
+		}
+
+		&__image {
+			@apply static w-full h-auto mb-12;
+
+			aspect-ratio: 820 / 911;
+		}
+
+		> .o-container > div:last-child {
+			@apply pt-16 pb-0;
+		}
+
+		h1 {
+			font-size: clamp(2.75rem, 6vw, 5rem);
+			line-height: 1.08;
+		}
+
+		p {
+			@apply mt-6;
+		}
+
+		.c-link {
+			@apply mt-0;
+		}
+
+		> .o-container > div > div:last-child {
+			@apply mt-10;
+		}
+	}
+}
