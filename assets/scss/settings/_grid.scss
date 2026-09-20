@@ -1,0 +1,12 @@
+//$grid-max-width: calc(theme("screens.2xl") - 4rem);
+$grid-max-width: 1440px;
+$grid-gutter: 2rem;
+
+:root {
+	--grid-max-width: 1440px;
+	--grid-gutter: 2rem;
+
+	@media(width >= theme(--breakpoint-xl)) {
+		--grid-gutter: 4rem;
+	}
+}

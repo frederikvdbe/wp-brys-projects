@@ -1,0 +1,49 @@
+.c-site-header{
+	@apply py-16;
+
+	position: fixed;
+	z-index: $elevation-header;
+	top: 0;
+	left: 0;
+	right: 0;
+
+	&__logo {}
+
+	&__nav {
+		@apply ml-auto;
+	}
+
+	&__menu {
+		@apply items-center gap-8;
+		display: none;
+
+		@media (width >= theme(--breakpoint-lg)) {
+			@apply flex;
+		}
+	}
+
+	&__toggle {
+		top: 50%;
+		right: 0;
+		transform: translateY(-50%);
+
+		@media (width >= theme(--breakpoint-lg)) {
+			display: none;
+		}
+
+		&.c-hamburger {
+			position: absolute;
+		}
+	}
+
+	// Headroom
+	&.c-site-header--fixed {
+		will-change: transform, background;
+		transition: $transition-default-long;
+	}
+
+	&.c-site-header--not-top {
+		@apply py-8;
+		@apply bg-white;
+	}
+}

@@ -1,0 +1,7 @@
+.o-container {
+	@apply relative mx-auto;
+
+	width: calc(100% - var(--grid-gutter) * 2);
+	max-width: $grid-max-width;
+}
+

@@ -1,0 +1,25 @@
+{
+	"type": "module",
+	"scripts": {
+		"dev": "vite",
+		"build": "vite build",
+		"preview": "vite preview"
+	},
+	"devDependencies": {
+		"@tailwindcss/postcss": "^4.3.3",
+		"body-scroll-lock": "^4.0.0-beta.0",
+		"gsap": "^3.15.0",
+		"hamburgers": "^1.2.1",
+		"postcss": "^8.5.28",
+		"rfs": "^10.0.0",
+		"rollup-plugin-copy": "^3.5.0",
+		"sass": "^1.104.1",
+		"tailwindcss": "^4.3.3",
+		"vite": "^8.3.0"
+	},
+	"dependencies": {
+		"@fancyapps/ui": "^6.1.15",
+		"headroom.js": "^0.12.0",
+		"swiper": "^14.2.0"
+	}
+}

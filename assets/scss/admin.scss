@@ -1,0 +1,58 @@
+@import "./settings/colors";
+
+.login{
+
+	h1{
+
+		a{
+			width: 175px;
+			height: 141px;
+			background-image: url('images/logo.png');
+			background-size: 175px 141px;
+		}
+	}
+
+	form{
+		border: 0;
+		box-shadow: 0 10px 40px rgba($color-primary-dark, .16);
+	}
+
+	.button-primary{
+		background: $color-primary;
+		border-color: $color-primary;
+		-webkit-box-shadow: 0 1px 0 $color-primary;
+		box-shadow: 0 1px 0 $color-primary;
+		color: #fff;
+		text-decoration: none;
+		text-shadow: none;
+
+		&:hover{
+			background: $color-primary;
+			border-color: $color-primary;
+			-webkit-box-shadow: 0 1px 0 $color-primary;
+			box-shadow: 0 1px 0 $color-primary;
+		}
+	}
+
+	// .button-primary.focus,
+	// .button-primary.hover,
+	// .button-primary:focus,
+	// .button-primary:hover {
+	//     background: $color-primary-dark;
+	//     border-color: $color-primary-dark;
+	//     color: #fff;
+	// }
+
+	p#nav,
+	p#backtoblog{
+
+		a{
+			color: $color-primary-dark;
+
+			&:hover{
+				color: $color-primary;
+			}
+		}
+	}
+
+}

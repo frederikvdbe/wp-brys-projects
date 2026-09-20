@@ -1,0 +1,13 @@
+body {
+	@apply flex flex-col;
+	@apply text-base;
+	min-height: 100vh;
+
+	font-family: $font-family-primary;
+	font-style: normal;
+	font-weight: 300;
+
+	background: #F5F5F5;
+
+	-webkit-font-smoothing: antialiased;
+}

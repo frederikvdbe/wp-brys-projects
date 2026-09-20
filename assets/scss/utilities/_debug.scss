@@ -1,0 +1,15 @@
+.u-debug-grid{
+	position: fixed;
+	z-index: 999;
+	top: -1px;
+	left: 0;
+	width: 100%;
+	pointer-events: none;
+	box-sizing: border-box;
+
+	[class^="col-"]{
+		height: calc(100vh + 2px);
+		border: 1px solid rgba(red, .16);
+		background: rgba(red, .016);
+	}
+}

@@ -1,0 +1,33 @@
+.c-mobile-nav {
+	position: fixed;
+	z-index: $elevation-nav;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	background: $color-primary;
+	width: 80%;
+	max-width: 640px;
+
+	&__menu {
+		@apply flex flex-col gap-4 p-24;
+
+		&-item {
+
+		}
+
+		&-link {
+			@apply font-normal text-2xl;
+			color: $color-primary-dark;
+
+			&:hover {
+				color: #fff;
+			}
+		}
+	}
+
+	&__toggle {
+		position: absolute;
+		top: $grid-gutter;
+		right: $grid-gutter;
+	}
+}

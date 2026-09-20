@@ -1,0 +1,4 @@
+.o-button-group {
+	@apply flex flex-col items-start md:flex-row justify-center;
+	@extend .u-gap;
+}

@@ -1,0 +1,88 @@
+.c-button{
+	@apply text-sm;
+	padding-left: 24px;
+	padding-right: 24px;
+	display: inline-block;
+	vertical-align: top;
+	line-height: $button-line-height;
+	height: $button-height;
+	border-radius: 4px;
+	text-transform: uppercase;
+	text-decoration: none;
+	font-weight: 700;
+	@include letter-spacing(80);
+
+	&--primary{
+		background: $color-primary;
+		color: #fff;
+
+		&:hover {
+			background: $color-primary-dark;
+		}
+	}
+
+	&--secondary{
+		background: $color-secondary;
+		color: #fff;
+
+		&:hover {
+			background: $color-secondary-dark;
+		}
+	}
+}
+
+.c-button-outline {
+	@extend .c-button;
+	padding-left: 23px;
+	padding-right: 23px;
+	line-height: remValue(46px);
+	height: 46px;
+	background: transparent;
+	border: 2px solid transparent;
+
+	&.c-button--primary {
+		color: $color-primary;
+		border-color: $color-primary;
+
+		&:hover {
+			background: $color-primary-dark;
+			border-color: $color-primary-dark;
+			color: #ffffff;
+		}
+	}
+
+	&.c-button--secondary {
+		color: $color-secondary;
+		border-color: $color-secondary;
+
+		&:hover {
+			background: $color-secondary-dark;
+			border-color: $color-secondary-dark;
+			color: #ffffff;
+		}
+	}
+}
+
+.c-button-transparent {
+	@extend .c-button;
+	background: transparent;
+	border: 0;
+
+	&.c-button--primary {
+		color: $color-primary;
+
+		&:hover{
+			background: $color-primary-dark;
+			color: #ffffff;
+		}
+	}
+
+	&.c-button--secondary {
+		color: $color-secondary;
+
+		&:hover{
+			background: $color-secondary-dark;
+			color: #ffffff;
+		}
+	}
+}

@@ -1,0 +1,8 @@
+$easing-outQuint: cubic-bezier(0.22, 1, 0.36, 1);
+$easing-default: $easing-outQuint;
+
+$transition-default-duration: .2s;
+$transition-long-duration: .7s;
+
+$transition-default: all $transition-default-duration $easing-default;
+$transition-default-long: all $transition-long-duration $easing-default;

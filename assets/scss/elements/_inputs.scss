@@ -1,0 +1,267 @@
+/**
+ * Labels
+ */
+label,
+legend {
+	@apply text-base;
+
+	display: block;
+	font-family: $font-primary;
+	color: $color-black;
+
+	.c-form--white & {
+		color: $color-white;
+	}
+
+	a {
+		text-decoration: underline;
+	}
+}
+
+label {
+	text-transform: lowercase;
+}
+
+/**
+ * Input fields
+ */
+input:not([type="checkbox"]):not([type="radio"]):not([type="range"]),
+select,
+textarea:not(.js-editor), {
+	@include form-input();
+}
+
+select {
+	//@include padding-right(44px);
+}
+
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+input[type="url"],
+input[type="number"],
+input[type="date"],
+input[type="password"],
+select {
+	//height: $form-input-height;
+}
+
+textarea {
+	//@include padding-top(24px);
+	min-height: 3.25rem;
+}
+
+input[type="checkbox"],
+input[type="radio"] {
+	display: none;
+
+	+ label {
+		display: inline-block;
+		position: relative;
+		padding-left: 40px;
+		height: 40px;
+
+		&:before {
+			@apply rounded;
+			content: "";
+			display: inline-block;
+
+			position: absolute;
+			left: 0;
+			top: 3px;
+
+			width: 24px;
+			height: 24px;
+
+			border: 1px solid $color-grey;
+		}
+	}
+
+	&:checked {
+
+		+ label::before {
+			background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 15 10.315'%3E%3Cpath d='M-12064.366,4441.189h0a1.5,1.5,0,0,1-1.061-.439l-4.686-4.687a1.5,1.5,0,0,1,0-2.121,1.5,1.5,0,0,1,2.121,0l3.625,3.625,6.254-6.254a1.5,1.5,0,0,1,2.121,0,1.5,1.5,0,0,1,0,2.121l-7.314,7.315A1.5,1.5,0,0,1-12064.366,4441.189Z' transform='translate(12070.552 -4430.874)' fill='%23fff'/%3E%3C/svg%3E");
+			background-size: 12px auto;
+			background-repeat: no-repeat;
+			background-position: center center;
+
+			border-color: $color-black;
+
+			background-color: $color-black;
+		}
+	}
+
+	&:not(:disabled) {
+		+ label {
+			cursor: pointer;
+		}
+	}
+
+	&:disabled {
+
+		+ label {
+			//opacity: $form-input-disabled-opacity;
+		}
+	}
+
+	.c-form--white & {
+		+ label {
+			&:before {
+				border-color: $color-white;
+			}
+		}
+		&:checked {
+
+			+ label::before {
+				background-color: transparent;
+			}
+		}
+	}
+}
+
+input[type="checkbox"] {
+
+	+ label {
+
+		&:before {
+			//border-radius: $border-radius-xs;
+		}
+	}
+}
+
+input[type="radio"] {
+
+	+ label {
+
+		&:before,
+		&:after {
+			border-radius: 100%;
+		}
+
+		&:after {
+			content: " ";
+			position: absolute;
+			z-index: 2;
+			top: 4px; // 6px - 2px top offset from before
+			left: 6px;
+			//width: calc($form-checkbox-width - 12px);
+			//height: calc($form-checkbox-width - 12px);
+			background: $color-primary;
+
+			opacity: 0;
+			transform: scale(.64);
+
+			transition: transform .2s ease-in-out;
+		}
+	}
+
+	&:checked {
+
+		+ label::after {
+			opacity: 1;
+			transform: scale(1);
+		}
+	}
+}
+
+/********** Range Input Styles **********/
+// https://www.smashingmagazine.com/2021/12/create-custom-range-input-consistent-browsers/
+input[type="range"] {
+
+	// Reset
+	-webkit-appearance: none;
+	appearance: none;
+	background: transparent;
+	cursor: pointer;
+	width: 100%;
+
+	/* Removes default focus */
+	&:focus {
+		outline: none;
+	}
+
+	/***** Chrome, Safari, Opera and Edge Chromium styles *****/
+
+	/* slider track */
+	&::-webkit-slider-runnable-track{
+		background-color: $color-grey;
+		height: 2px;
+		border-radius: 2px;
+	}
+
+	/* slider thumb */
+	&::-webkit-slider-thumb {
+		-webkit-appearance: none; /* Override default look */
+		appearance: none;
+		margin-top: -6px; /* Centers thumb on the track */
+
+		/*custom styles*/
+		background-color: $color-black;
+		height: 15px;
+		width: 15px;
+		border-radius: 40px;
+	}
+
+	&:focus::-webkit-slider-thumb {
+		border: 1px solid $color-dark;
+		outline: 3px solid $color-primary-dark;
+		outline-offset: 0.125rem;
+	}
+
+	/******** Firefox styles ********/
+	/* slider track */
+	&::-moz-range-track {
+		background-color: $color-grey;
+		height: 2px;
+		border-radius: 2px;
+	}
+
+	/* slider thumb */
+	&::-moz-range-thumb {
+		border: none; /*Removes extra border that FF applies*/
+		border-radius: 0; /*Removes default border-radius that FF applies*/
+
+		/*custom styles*/
+		background-color: $color-black;
+		height: 15px;
+		width: 15px;
+		border-radius: 40px;
+	}
+
+	&:focus::-moz-range-thumb {
+		border: 1px solid $color-dark;
+		outline: 3px solid $color-primary-dark;
+		outline-offset: 0.125rem;
+	}
+
+	.c-form--white & {
+
+		&::-webkit-slider-runnable-track{
+			background-color: rgba($color-white, .64);
+		}
+
+		&::-webkit-slider-thumb {
+			background-color: $color-white;
+		}
+
+		&:focus::-webkit-slider-thumb {
+			border-color: $color-white;
+			outline: 3px solid rgba($color-white, .4);
+		}
+
+		/******** Firefox styles ********/
+		/* slider track */
+		&::-moz-range-track {
+			background-color: rgba($color-white, .64);
+		}
+
+		&::-moz-range-thumb {
+			background-color: $color-white;
+		}
+
+		&:focus::-moz-range-thumb {
+			border-color: $color-white;
+			outline: 3px solid rgba($color-white, .4);
+		}
+	}
+}

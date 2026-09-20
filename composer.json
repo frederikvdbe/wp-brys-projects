@@ -1,0 +1,78 @@
+{
+	"name": "frederikvdbe/brys-projects",
+	"type": "project",
+	"description": "WordPress boilerplate",
+	"authors": [
+		{
+			"name": "Frederik Van Den Berge",
+			"email": "hello@frederikvd.be",
+			"homepage": "https://frederikvd.be"
+		}
+	],
+	"repositories": [
+		{
+			"name": "wp-packages",
+			"type": "composer",
+			"url": "https://repo.wp-packages.org"
+		},
+		{
+			"type": "composer",
+			"url": "https://composer.gravity.io"
+		},
+		{
+			"type": "composer",
+			"url": "https://connect.advancedcustomfields.com"
+		}
+	],
+	"require": {
+		"php": ">=8.2",
+		"composer/installers": "^2.3",
+		"vlucas/phpdotenv": "^5.7",
+		"oscarotero/env": "^2.1",
+		"roots/bedrock-autoloader": "^1.1",
+		"roots/bedrock-disallow-indexing": "^2.0",
+		"roots/wordpress": "^7.1",
+		"roots/wp-config": "^1.0",
+		"wpengine/advanced-custom-fields-pro": "*",
+		"gravity/gravityforms": "^3.1",
+		"wp-plugin/wp-mail-smtp": "^4.9",
+		"wp-plugin/wp-smushit": "^4.3",
+		"wp-plugin/imsanity": "^2.9",
+		"wp-plugin/intuitive-custom-post-order": "^3.2",
+		"wp-plugin/seo-by-rank-math": "^1.0",
+		"wp-theme/twentytwentyfive": "^1.0",
+		"anthonybudd/wp_mail": "^2.0"
+	},
+	"require-dev": {
+		"wp-plugin/query-monitor": "^4.0"
+	},
+	"extra": {
+		"installer-paths": {
+			"web/app/mu-plugins/{$name}/": [
+				"type:wordpress-muplugin"
+			],
+			"web/app/plugins/{$name}/": [
+				"type:wordpress-plugin"
+			],
+			"web/app/themes/{$name}/": [
+				"type:wordpress-theme"
+			]
+		},
+		"wordpress-install-dir": "web/wp"
+	},
+	"scripts": {
+		"post-root-package-install": [
+			"php -r \"copy('.env.example', '.env');\""
+		],
+		"test": [
+			"phpcs"
+		]
+	},
+	"config": {
+		"platform-check": false,
+		"allow-plugins": {
+			"composer/installers": true,
+			"roots/wordpress-core-installer": true
+		}
+	}
+}

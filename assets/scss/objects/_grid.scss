@@ -1,0 +1,17 @@
+.o-grid {
+	@extend .u-gap ;
+	@apply grid grid-cols-1;
+
+	@media(width >= theme(--breakpoint-sm)) {
+		@apply grid-cols-12;
+	}
+
+	&--lg {
+		@extend .u-gap ;
+		@apply grid grid-cols-1;
+
+		@media(width >= theme(--breakpoint-lg)) {
+			@apply grid-cols-12;
+		}
+	}
+}

@@ -1,0 +1,65 @@
+@import "tailwind";
+
+/*
+ * 1 SETTINGS
+ * Used with preprocessors and contain font, colors definitions, etc.
+ */
+@import "settings/grid";
+@import "settings/colors";
+@import "settings/fonts";
+@import "settings/typography";
+@import "settings/elevation";
+@import "settings/animation";
+@import "settings/hamburger";
+@import "settings/buttons";
+
+/*
+ * 2 Tools
+ * Globally used mixins and functions. It’s important not to output any CSS in the first 2 layers.
+ */
+@import "tools/functions";
+@import "tools/mixins";
+@import "tools/extends";
+
+/*
+ * 3 Generic
+ * Reset and/or normalize styles, box-sizing definition, etc. This is the first layer which generates actual CSS.
+ */
+
+/*
+ * 4 Elements
+ * Styling for bare HTML elements (like H1, A, etc.). These come with default styling from the browser so we can redefine them here.
+ */
+@import "node_modules/hamburgers/_sass/hamburgers/hamburgers";
+@import "elements/root";
+@import "elements/links";
+@import "elements/headings";
+
+/*
+ * 5 Objects
+ * Class-based selectors which define undecorated design patterns, for example the media object known from OOCSS.
+ */
+@import "objects/site";
+@import "objects/container";
+@import "objects/grid";
+@import "objects/button-group";
+
+/*
+ * 6 Components
+ * Specific UI components. This is where most of our work takes place. We often compose UI components of Objects and Components.
+ */
+@import "components/site-header";
+@import "components/backdrop";
+@import "components/hamburger";
+@import "components/button";
+@import "components/mobile-nav";
+@import "components/text-image";
+
+/*
+ * 7 Utilities
+ * Specific UI components. This is where most of our work takes place. We often compose UI components of Objects and Components.
+ */
+@import "utilities/debug";
+@import "utilities/gap";
+@import "utilities/scopes";
+@import "utilities/body-lock-scroll";

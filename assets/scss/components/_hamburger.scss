@@ -1,0 +1,9 @@
+.c-hamburger {
+	position: relative;
+	width: 48px;
+	height: 48px;
+
+	.hamburger-box {
+		@extend %position-center;
+	}
+}

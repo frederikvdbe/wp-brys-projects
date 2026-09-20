@@ -1,0 +1,7 @@
+.u-gap {
+	@apply gap-8;
+
+	@media(width >= theme(--breakpoint-xl)) {
+		@apply  gap-16;
+	}
+}

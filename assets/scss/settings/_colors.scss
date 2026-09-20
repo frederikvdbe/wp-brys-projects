@@ -1,0 +1,24 @@
+// Reminder: Keep tailwind.config.js in sync
+
+$color-primary: #678475;
+$color-primary-dark: #2C3C34;
+$color-secondary: #FDCD00;
+$color-secondary-dark: #D0A800;
+$color-white: #ffffff;
+$color-black: #000000;
+
+$colors: (
+	"primary": $color-primary,
+	"primary-dark": $color-primary-dark,
+	"secondary" : $color-secondary,
+	"secondary-dark" : $color-secondary-dark,
+	"white" : $color-white,
+	"black" : $color-black,
+);
+
+:root {
+	@each $name, $value in $colors {
+		--color-#{$name} : #{$value};
+		--color#{$name}-xdark: darken()
+	}
+}
