@@ -17,6 +17,7 @@ if ($menu && $openButton) {
 	const $backdrop = $menu.querySelector('.c-menu__backdrop');
 	const $panel = $menu.querySelector('.js-menu-panel');
 	const $labels = $menu.querySelectorAll('.js-menu-label');
+	const $masks = $menu.querySelectorAll('.c-menu__mask');
 	const $rules = $menu.querySelectorAll('.js-menu-rule');
 	const $close = $menu.querySelector('.c-menu__close');
 	const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
@@ -46,6 +47,7 @@ if ($menu && $openButton) {
 		if (reducedMotion.matches) {
 			gsap.set($panel, { xPercent: 0 });
 			gsap.set($labels, { yPercent: 0, rotate: 0 });
+			gsap.set($masks, { clearProps: 'clipPath' });
 			gsap.set($rules, { scaleX: 1 });
 			timeline = gsap.timeline().fromTo($menu, { autoAlpha: 0 }, { autoAlpha: 1, duration: .3 });
 			gsap.set($backdrop, { opacity: 1 });
@@ -68,7 +70,16 @@ if ($menu && $openButton) {
 				duration: 1,
 				ease: 'expo.out',
 				stagger: .06,
-			}, .36);
+			}, .36)
+			// The mask reaches below the rule for descenders, so clip it at the rule
+			// while the labels rise, then open it once they have landed
+			.fromTo($masks, { clipPath: 'inset(0em 0em 0.085em 0em)' }, {
+				clipPath: 'inset(0em 0em 0em 0em)',
+				duration: .4,
+				ease: 'power2.out',
+				stagger: .06,
+				clearProps: 'clipPath',
+			}, .86);
 	};
 
 	const closeMenu = () => {
