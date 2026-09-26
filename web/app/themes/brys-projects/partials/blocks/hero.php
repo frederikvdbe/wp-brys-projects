@@ -19,9 +19,11 @@ $image_alt = $image_alt ?? '';
 <section class="b-hero relative z-10 <?= $classes; ?>">
 	<div class="o-container relative">
 
-		<img class="b-hero__image absolute top-[4.9375rem] right-0 w-[51.25rem] h-[56.9375rem] object-cover"
-			 src="<?= get_template_directory_uri(); ?>/assets/dist/images/<?= $image; ?>"
-			 width="820" height="911" alt="<?= esc_attr( $image_alt ); ?>">
+		<div class="b-hero__image js-hero-image absolute top-[4.9375rem] right-0 w-[51.25rem] h-[56.9375rem] overflow-hidden bg-ink">
+			<img class="w-full h-full object-cover"
+				 src="<?= get_template_directory_uri(); ?>/assets/dist/images/<?= $image; ?>"
+				 width="820" height="911" alt="<?= esc_attr( $image_alt ); ?>">
+		</div>
 
 		<div class="b-hero__content relative flex flex-col justify-center pt-[4.9375rem] min-h-(--hero-height)">
 			<h1 class="text-[7.125rem] leading-[7.875rem]"><?= $title; ?></h1>

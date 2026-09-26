@@ -1,5 +1,6 @@
-// Card hover: the image zooms in and goes a bit darker, the arrow turns to point
-// up and a sage rule draws in over the base rule, like in the menu overlay.
+// Card hover: the image zooms in and goes a bit darker, the arrow slides out and
+// back in like the scroll hint, and a sage rule draws in over the base rule, like
+// in the menu overlay.
 .b-realisaties {
 	&__media {
 		background: var(--color-ink);
@@ -25,9 +26,7 @@
 	}
 
 	&__arrow {
-		@apply block;
-
-		transition: rotate .9s $easing-outQuint;
+		@apply block overflow-hidden;
 	}
 
 	&__card:hover,
@@ -49,8 +48,8 @@
 			}
 		}
 
-		.b-realisaties__arrow {
-			rotate: -90deg;
+		.b-realisaties__arrow svg {
+			animation: arrow-pass .9s $easing-outQuint;
 		}
 	}
 }

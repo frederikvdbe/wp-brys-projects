@@ -6,6 +6,7 @@ if (import.meta.hot) {
 
 import './site-header.js';
 import './menu.js';
+import './hero.js';
 import './wall.js';
 import './index-preview.js';
 import './contact.js';

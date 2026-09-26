@@ -52,3 +52,22 @@
 		transform: translate(0, 0);
 	}
 }
+
+// The same move once, used on hover
+@keyframes arrow-pass {
+	0% {
+		transform: translate(0, 0);
+	}
+
+	40% {
+		transform: translate(110%, 110%);
+	}
+
+	40.01% {
+		transform: translate(-110%, -110%);
+	}
+
+	100% {
+		transform: translate(0, 0);
+	}
+}
