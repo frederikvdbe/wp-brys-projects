@@ -31,7 +31,7 @@ $header_classes = $header_classes ?? '';
 				</a>
 			</div>
 
-			<button type="button" class="c-site-header__toggle js-mobile-nav-toggle justify-self-end relative top-[0.125rem]">
+			<button type="button" class="c-site-header__toggle js-menu-open justify-self-end relative top-[0.125rem]">
 				<span class="font-display text-[1.01562rem] leading-none">Menu</span>
 				<span class="c-site-header__bars">
 					<span></span>

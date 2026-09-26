@@ -33,6 +33,8 @@
 	'credits'   => array( 'label' => 'Website by frederikvd.be', 'url' => 'https://frederikvd.be' ),
 ) ); ?>
 
+<?php get_template_part( 'partials/components/menu' ); ?>
+
 <?php wp_footer(); ?>
 
 <?php get_template_part( 'partials/components/debug-grid' ); ?>
