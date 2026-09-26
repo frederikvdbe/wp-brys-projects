@@ -45,6 +45,57 @@ get_header();
 	),
 ) ); ?>
 
+<?php get_template_part( 'partials/blocks/statement', null, array(
+	'classes'   => 'mt-[16rem]',
+	'statement' => 'Wat wij afspreken,<br>zetten wij op papier.',
+	'pillars'   => array(
+		array(
+			'number' => '01',
+			'title'  => 'Vaste prijs',
+			'text'   => 'De prijs in de offerte is de prijs die u betaalt. Wilt u tijdens de werken iets extra, dan krijgt u eerst een prijs. Wij starten pas na uw akkoord.',
+		),
+		array(
+			'number' => '02',
+			'title'  => 'Vaste planning',
+			'text'   => 'Bij de offerte krijgt u een startdatum en de duur van de werken. Verandert er iets, dan hoort u het van ons, niet achteraf.',
+		),
+		array(
+			'number' => '03',
+			'title'  => 'Nette werf',
+			'text'   => 'Wij dekken vloeren en meubels af en ruimen elke dag op. Zo kunt u tijdens de werken gewoon thuis blijven wonen.',
+		),
+	),
+) ); ?>
+
+<?php get_template_part( 'partials/blocks/faq', null, array(
+	'classes' => 'mt-[16rem]',
+	'title'   => 'Praktisch',
+	'text'    => 'De vragen die wij het vaakst krijgen voor de start van een project.',
+	'link'    => array( 'label' => 'Alle veelgestelde vragen', 'url' => '/veelgestelde-vragen' ),
+	'items'   => array(
+		array(
+			'question' => 'Wat kost het eerste bezoek?',
+			'answer'   => 'Niets. Het bezoek ter plaatse en de offerte zijn gratis en zonder verplichting.',
+		),
+		array(
+			'question' => 'Hoeveel btw betaal ik?',
+			'answer'   => 'Is uw woning ouder dan tien jaar en woont u er zelf in, dan betaalt u meestal 6% btw in plaats van 21%. Dat geldt voor het werk én het materiaal. Wij kijken dit na bij het bezoek en zetten het juiste tarief op de offerte.',
+		),
+		array(
+			'question' => 'Kan ik thuis blijven wonen tijdens de werken?',
+			'answer'   => 'Meestal wel. Wij spreken vooraf af welke ruimtes wanneer niet bruikbaar zijn. Bij een vloer in microcement kunt u enkele dagen niet over die zone lopen. Dat staat in de planning.',
+		),
+		array(
+			'question' => 'Hoe snel kunnen jullie starten?',
+			'answer'   => 'Dat hangt af van onze planning en van de grootte van uw project. Bij de offerte krijgt u een concrete startdatum.',
+		),
+		array(
+			'question' => 'Werken jullie samen met mijn architect?',
+			'answer'   => 'Graag. Wij stemmen af met uw architect of interieurontwerper over details, materialen en timing. U houdt één aanspreekpunt voor de afwerking.',
+		),
+	),
+) ); ?>
+
 <?php get_template_part( 'partials/blocks/cta', null, array(
 	'classes' => 'mt-[16rem]',
 	'title'   => 'Klaar voor<br>de eerste stap?',
