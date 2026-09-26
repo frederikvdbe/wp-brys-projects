@@ -4,9 +4,10 @@ if (import.meta.hot) {
 	document.getElementById('vite-dev-styles-css')?.remove();
 }
 
+import './smooth-scroll.js';
 import './site-header.js';
 import './menu.js';
-import './hero.js';
+import './reveal.js';
 import './wall.js';
 import './index-preview.js';
 import './contact.js';

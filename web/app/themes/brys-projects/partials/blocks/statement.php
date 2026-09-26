@@ -12,11 +12,11 @@ extract( $args );
 $classes = $classes ?? '';
 ?>
 
-<section class="b-statement <?= $classes; ?>">
+<section class="b-statement <?= $classes; ?>" data-reveal-sequence>
 	<div class="o-container">
 		<div class="o-grid">
 
-			<h2 class="sm:col-span-10 sm:col-start-2 text-[6.15rem] leading-[7.5rem] text-sage">
+			<h2 class="sm:col-span-10 sm:col-start-2 text-[6.15rem] leading-[7.5rem] text-sage" data-reveal="lines">
 				<?= $statement; ?>
 			</h2>
 
@@ -24,7 +24,7 @@ $classes = $classes ?? '';
 
 		<ul class="o-grid mt-[7.875rem]">
 			<?php foreach ( $pillars as $index => $pillar ) : ?>
-				<li class="sm:col-span-3<?= $index === 0 ? ' sm:col-start-2' : ''; ?>">
+				<li class="sm:col-span-3<?= $index === 0 ? ' sm:col-start-2' : ''; ?>" data-reveal="fade">
 
 					<h3 class="text-[1.84375rem] leading-[1.6875rem] font-[450] flex gap-[0.875rem]">
 						<span class="text-sage"><?= $pillar['number']; ?></span>

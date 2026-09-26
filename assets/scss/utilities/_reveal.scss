@@ -1,0 +1,58 @@
+// Scroll reveals from assets/js/reveal.js. Elements stay hidden until their
+// reveal starts. Without JavaScript or with reduced motion they show as normal.
+@media (prefers-reduced-motion: no-preference) {
+	.js {
+		[data-reveal="lines"],
+		[data-reveal="fade"] {
+			&:not(.is-revealed) {
+				visibility: hidden;
+			}
+		}
+
+		// No CSS transitions until the reveal is done, they would fight GSAP
+		[data-reveal="image"]:not(.is-revealed) img {
+			opacity: 0;
+			transition: none;
+		}
+	}
+}
+
+[data-reveal="image"] {
+	overflow: hidden;
+	background: var(--color-ink);
+}
+
+// The mask around each line clips at the line box, give descenders some room
+.c-reveal-line-mask {
+	padding-bottom: 0.12em;
+	margin-bottom: -0.12em;
+}
+
+// Page transition: the old page fades out, the new one fades in and rises a little.
+// Browsers without cross document view transitions just load the page.
+@view-transition {
+	navigation: auto;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+	::view-transition-old(root) {
+		animation: page-out .35s cubic-bezier(0.4, 0, 1, 1) both;
+	}
+
+	::view-transition-new(root) {
+		animation: page-in .7s $easing-outQuint .1s both;
+	}
+}
+
+@keyframes page-out {
+	to {
+		opacity: 0;
+	}
+}
+
+@keyframes page-in {
+	from {
+		opacity: 0;
+		transform: translateY(1.5rem);
+	}
+}

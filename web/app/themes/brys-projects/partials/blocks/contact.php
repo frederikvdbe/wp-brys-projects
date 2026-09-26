@@ -18,7 +18,7 @@ $classes = $classes ?? '';
 
 		<dl class="b-contact__details sm:col-span-4 border-b border-ink self-start">
 			<?php foreach ( $details as $detail ) : ?>
-				<div class="grid grid-cols-[7rem_1fr] gap-[1.5rem] py-[1.5rem] border-t border-ink">
+				<div class="grid grid-cols-[7rem_1fr] gap-[1.5rem] py-[1.5rem] border-t border-ink" data-reveal="fade">
 					<dt class="c-eyebrow pt-[0.375rem]"><?= $detail['label']; ?></dt>
 					<dd class="text-[1.1rem] leading-[1.75rem]">
 						<?php foreach ( $detail['lines'] as $line ) : ?>
@@ -29,7 +29,7 @@ $classes = $classes ?? '';
 			<?php endforeach; ?>
 		</dl>
 
-		<div class="b-contact__forms sm:col-span-7 sm:col-start-6 js-contact">
+		<div class="b-contact__forms sm:col-span-7 sm:col-start-6 js-contact" data-reveal="fade">
 
 			<div class="b-contact__tabs flex flex-wrap gap-x-[3rem] gap-y-[1rem]" role="tablist" aria-label="Kies een formulier">
 				<?php foreach ( $forms as $index => $form ) : ?>

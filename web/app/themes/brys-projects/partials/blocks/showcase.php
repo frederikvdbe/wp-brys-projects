@@ -20,13 +20,13 @@ $link      = $link ?? null;
 <section class="b-showcase relative z-10 <?= $classes; ?>">
 	<div class="o-container o-grid pt-[11.5rem]">
 
-		<h1 class="sm:col-span-10 text-[7.125rem] leading-[7.875rem]"><?= $title; ?></h1>
+		<h1 class="sm:col-span-10 text-[7.125rem] leading-[7.875rem]" data-reveal="lines"><?= $title; ?></h1>
 
 	</div>
 
 	<div class="o-container o-grid mt-[7.5rem]">
 
-		<div class="b-showcase__image sm:col-span-8 h-[57.125rem] mb-[-10rem]">
+		<div class="b-showcase__image sm:col-span-8 h-[57.125rem] mb-[-10rem]" data-reveal="image">
 			<img class="w-full h-full object-cover"
 				 src="<?= get_template_directory_uri(); ?>/assets/dist/images/<?= $image; ?>"
 				 width="1212" height="914" alt="<?= esc_attr( $image_alt ); ?>">
@@ -34,11 +34,11 @@ $link      = $link ?? null;
 
 		<div class="b-showcase__text sm:col-span-3 sm:col-start-10 self-end pb-[3rem]">
 			<?php foreach ( (array) $text as $index => $paragraph ) : ?>
-				<p class="<?= $index > 0 ? 'mt-[1.5rem]' : ''; ?>"><?= $paragraph; ?></p>
+				<p class="<?= $index > 0 ? 'mt-[1.5rem]' : ''; ?>" data-reveal="fade"><?= $paragraph; ?></p>
 			<?php endforeach; ?>
 
 			<?php if ( $link ) : ?>
-				<div class="flex mt-[2.75rem]">
+				<div class="flex mt-[2.75rem]" data-reveal="fade">
 					<a href="<?= esc_url( $link['url'] ); ?>" class="c-link"><?= $link['label']; ?></a>
 				</div>
 			<?php endif; ?>

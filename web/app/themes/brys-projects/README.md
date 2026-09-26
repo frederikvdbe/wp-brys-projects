@@ -156,6 +156,29 @@ The template loads each form by its **title**, so the form id can differ per sit
 - End each form with an html field for the privacy note.
 - Without Gravity Forms active, the page shows the e-mail address instead.
 
+## Motion
+
+| What | File |
+| --- | --- |
+| Smooth scroll (Lenis) | `assets/js/smooth-scroll.js` |
+| Scroll reveals | `assets/js/reveal.js`, `assets/scss/utilities/_reveal.scss` |
+| Page transition | `assets/scss/utilities/_reveal.scss` |
+
+Scroll reveals are set in the markup with a `data-reveal` attribute:
+
+| Value | Put it on | Effect |
+| --- | --- | --- |
+| `lines` | a heading | the lines rise out of a mask, like the menu |
+| `fade` | text, links, list items | fades in and moves up, in turn with its neighbours |
+| `image` | the wrapper of an `img` | the image fades in and zooms out over dark brown |
+
+- Add `data-reveal-sequence` to a section to make its fades wait until the title has
+  mostly landed.
+- The Realisaties photo wall has its own reveal in `assets/js/wall.js`.
+- The page transition uses cross document view transitions. Browsers without support
+  load the page as normal.
+- With reduced motion on, there is no smooth scroll, no reveal and no transition.
+
 ## Three things to replace before go live
 
 1. **The photos** are cut out of the design export, so they are 1x only and look soft

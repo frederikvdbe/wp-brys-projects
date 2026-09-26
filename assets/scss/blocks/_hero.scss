@@ -8,13 +8,6 @@
 	--hero-overhang: calc(4.9375rem + 56.9375rem - var(--hero-height));
 }
 
-// Hidden until assets/js/hero.js fades it in
-@media (prefers-reduced-motion: no-preference) {
-	.b-hero__image img {
-		opacity: 0;
-	}
-}
-
 // The design is only drawn for desktop. From the tablet breakpoint down the
 // image moves under the text and the heading steps back to a readable size.
 @media (width < theme(--breakpoint-xl)) {

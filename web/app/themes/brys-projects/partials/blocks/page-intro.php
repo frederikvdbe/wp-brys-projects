@@ -19,18 +19,18 @@ $classes = $classes ?? '';
 
 		<div class="sm:col-span-8">
 			<?php if ( ! empty( $eyebrow ) ) : ?>
-				<p class="c-eyebrow flex gap-[0.75rem] mb-[2rem]">
+				<p class="c-eyebrow flex gap-[0.75rem] mb-[2rem]" data-reveal="fade">
 					<?= $eyebrow; ?>
 					<?php if ( ! empty( $count ) ) : ?>
 						<span>(<?= sprintf( '%02d', $count ); ?>)</span>
 					<?php endif; ?>
 				</p>
 			<?php endif; ?>
-			<h1 class="text-[7.125rem] leading-[7.875rem]"><?= $title; ?></h1>
+			<h1 class="text-[7.125rem] leading-[7.875rem]" data-reveal="lines"><?= $title; ?></h1>
 		</div>
 
 		<div class="sm:col-span-3 sm:col-start-10 self-end">
-			<p><?= $text; ?></p>
+			<p data-reveal="fade"><?= $text; ?></p>
 		</div>
 
 	</div>

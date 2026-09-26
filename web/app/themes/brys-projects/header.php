@@ -12,6 +12,7 @@ $header_classes = $header_classes ?? '';
 	<title><?php wp_title( '|', true, 'right' ); ?></title>
 	<meta charset="<?php bloginfo( 'charset' ); ?>"/>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<script>document.documentElement.classList.add('js');</script>
 	<?php wp_head(); ?>
 </head>
 

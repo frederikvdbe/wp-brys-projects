@@ -16,21 +16,21 @@ $classes   = $classes ?? '';
 $image_alt = $image_alt ?? '';
 ?>
 
-<section class="b-hero relative z-10 <?= $classes; ?>">
+<section class="b-hero relative z-10 <?= $classes; ?>" data-reveal-sequence>
 	<div class="o-container relative">
 
-		<div class="b-hero__image js-hero-image absolute top-[4.9375rem] right-0 w-[51.25rem] h-[56.9375rem] overflow-hidden bg-ink">
+		<div class="b-hero__image absolute top-[4.9375rem] right-0 w-[51.25rem] h-[56.9375rem]" data-reveal="image">
 			<img class="w-full h-full object-cover"
 				 src="<?= get_template_directory_uri(); ?>/assets/dist/images/<?= $image; ?>"
 				 width="820" height="911" alt="<?= esc_attr( $image_alt ); ?>">
 		</div>
 
 		<div class="b-hero__content relative flex flex-col justify-center pt-[4.9375rem] min-h-(--hero-height)">
-			<h1 class="text-[7.125rem] leading-[7.875rem]"><?= $title; ?></h1>
+			<h1 class="text-[7.125rem] leading-[7.875rem]" data-reveal="lines"><?= $title; ?></h1>
 
-			<p class="mt-[0.6875rem] max-w-[31.5rem]"><?= $text; ?></p>
+			<p class="mt-[0.6875rem] max-w-[31.5rem]" data-reveal="fade"><?= $text; ?></p>
 
-			<div class="flex mt-[4.25rem]">
+			<div class="flex mt-[4.25rem]" data-reveal="fade">
 				<a href="<?= esc_url( $link['url'] ); ?>" class="c-link"><?= $link['label']; ?></a>
 			</div>
 		</div>

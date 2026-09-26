@@ -1,6 +1,7 @@
 import { disableBodyScroll, enableBodyScroll } from 'body-scroll-lock';
 import { gsap } from 'gsap';
 import { CustomEase } from 'gsap/CustomEase';
+import { lenis } from './smooth-scroll.js';
 
 // Full screen menu: a dark panel slides in from the right, the rules draw in
 // and the labels rise out of a mask.
@@ -39,6 +40,7 @@ if ($menu && $openButton) {
 		// The scroll lock hides the scrollbar, the CSS adds this width back so Close lines up with Menu
 		$menu.style.setProperty('--menu-scrollbar', `${window.innerWidth - document.documentElement.clientWidth}px`);
 		disableBodyScroll($panel, scrollOptions);
+		lenis?.stop();
 		$menu.classList.add('is-open');
 
 		if (reducedMotion.matches) {
@@ -79,6 +81,7 @@ if ($menu && $openButton) {
 			$menu.classList.remove('is-open');
 			gsap.set($menu, { clearProps: 'opacity,visibility' });
 			enableBodyScroll($panel);
+			lenis?.start();
 		};
 
 		$openButton.focus({ preventScroll: true });

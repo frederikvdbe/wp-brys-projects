@@ -13,8 +13,8 @@ $classes = $classes ?? '';
 
 <section class="b-cta <?= $classes; ?>">
 	<div class="o-container flex flex-col items-center text-center pb-[12rem]">
-		<h2 class="text-[5.25rem] leading-[5.5rem]"><?= $title; ?></h2>
-		<div class="flex mt-[3rem]">
+		<h2 class="text-[5.25rem] leading-[5.5rem]" data-reveal="lines"><?= $title; ?></h2>
+		<div class="flex mt-[3rem]" data-reveal="fade">
 			<a href="<?= esc_url( $link['url'] ); ?>" class="c-link"><?= $link['label']; ?></a>
 		</div>
 	</div>
