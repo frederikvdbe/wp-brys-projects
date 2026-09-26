@@ -4,8 +4,9 @@
  * The animation lives in assets/js/menu.js.
  */
 $items = array(
-	array( 'label' => 'Diensten', 'url' => '/diensten' ),
+	array( 'label' => 'Microcement', 'url' => '/microcement' ),
 	array( 'label' => 'Realisaties', 'url' => '/realisaties' ),
+	array( 'label' => 'Werkwijze', 'url' => '/werkwijze' ),
 	array( 'label' => 'Over ons', 'url' => '/over-ons' ),
 	array( 'label' => 'Contact', 'url' => '/contact' ),
 );

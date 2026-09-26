@@ -1,6 +1,6 @@
 @layer components {
 	// Full screen menu overlay. Sizes follow the 1920px design in vw, the labels
-	// scale with both the viewport width and height so four rows always fit.
+	// scale with both the viewport width and height so all rows always fit.
 	.c-menu {
 		@apply fixed inset-0 invisible;
 
@@ -70,36 +70,43 @@
 			width: 55.833vw;        // 1072px of 1920px
 			font-family: $font-family-display;
 			font-weight: 300;
-			font-size: clamp(3rem, min(6.25vw, 11.1vh), 9rem); // 120px at 1920 × 1080
+			font-size: clamp(3rem, min(6.25vw, 10vh), 9rem); // 108px at 1920 × 1080, so five rows fit
 			letter-spacing: -0.01em;
 		}
 
+		// Spacing follows the design: 0.31em from the rule above to the cap height,
+		// 0.175em from the baseline to the rule below (Newsreader: ascent 0.74em,
+		// cap height 0.715em, descent 0.26em)
 		&__link {
 			@apply relative flex items-end justify-between;
 
-			padding-top: 0.1em;
-			padding-bottom: 0.14em;
+			padding-top: 0.285em;
 		}
 
 		// Clips the label for the reveal. Hover moves and dims this wrapper through
 		// the `translate` property, so it never fights the GSAP transform on the label.
+		// The negative margin puts the rule 0.175em under the baseline, while the
+		// clip still leaves room for descenders such as the j in Werkwijze.
 		&__mask {
 			@apply block overflow-hidden;
 
-			line-height: 1.05;
-			padding-bottom: 0.06em;
+			margin-bottom: -0.085em;
 			transition: translate .9s $easing-outQuint, opacity .6s $easing-outQuint;
 		}
 
+		// No padding here: the label must fill the mask, so moving it down by its own
+		// height hides it completely
 		&__label {
 			@apply block will-change-transform;
+
+			line-height: 1;
 		}
 
 		&__arrow {
 			@apply block opacity-0;
 
 			width: 0.22em;
-			margin-bottom: 0.2em;
+			margin-bottom: 0.175em;
 			translate: -0.3em 0.3em;
 			transition: translate .9s $easing-outQuint, opacity .5s $easing-outQuint;
 
