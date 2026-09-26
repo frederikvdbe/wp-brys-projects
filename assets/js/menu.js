@@ -46,7 +46,7 @@ if ($menu && $openButton) {
 
 		if (reducedMotion.matches) {
 			gsap.set($panel, { xPercent: 0 });
-			gsap.set($labels, { yPercent: 0, rotate: 0 });
+			gsap.set($labels, { yPercent: 0 });
 			gsap.set($masks, { clearProps: 'clipPath' });
 			gsap.set($rules, { scaleX: 1 });
 			timeline = gsap.timeline().fromTo($menu, { autoAlpha: 0 }, { autoAlpha: 1, duration: .3 });
@@ -64,9 +64,8 @@ if ($menu && $openButton) {
 				ease: 'expo.out',
 				stagger: .06,
 			}, .32)
-			.fromTo($labels, { yPercent: 110, rotate: 4, transformOrigin: '0% 100%' }, {
+			.fromTo($labels, { yPercent: 110 }, {
 				yPercent: 0,
-				rotate: 0,
 				duration: 1,
 				ease: 'expo.out',
 				stagger: .06,

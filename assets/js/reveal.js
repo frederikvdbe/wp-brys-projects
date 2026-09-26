@@ -50,8 +50,6 @@ if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
 
 					return gsap.from(self.lines, {
 						yPercent: 110,
-						rotate: 3,
-						transformOrigin: '0% 100%',
 						duration: 1.2,
 						ease: 'expo.out',
 						stagger: 0.08,
