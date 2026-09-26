@@ -51,6 +51,30 @@ The design uses Financier Display, which is a paid font. The theme uses
 **Newsreader** instead, the closest free match. The body font is **Mulish**. Both are
 self hosted in `assets/fonts/` and declared in `assets/scss/settings/_fonts.scss`.
 
+## The Realisaties page
+
+Template `page-templates/realisaties.php`, set it on the page with slug `realisaties`.
+
+| Block | File |
+| --- | --- |
+| Title, count and intro | `partials/blocks/page-intro.php` |
+| Photo wall | `partials/blocks/wall.php` |
+| Closing call to action | `partials/blocks/cta.php` |
+
+How the photo wall works:
+
+- Photos are listed in the template as `image`, `ratio` (for example `4/5`), `alt` and
+  an optional `caption`. The ratio sets the crop.
+- Each photo goes to the shortest of 3 columns, so the columns stay balanced.
+- Width, alignment and space above each photo come from short lists that repeat.
+  The lists have different lengths, so the result looks random but is the same on
+  every visit. Change the lists at the top of `wall.php` to change the feel.
+- Under 768px the wall becomes 2 columns and the order of the photos changes.
+- `assets/js/wall.js` reveals each photo when it scrolls into view and moves the
+  columns at different speeds. Both are off when the visitor prefers reduced motion.
+
+The photos are placeholders: the design photos, reused with other crops.
+
 ## Two things to replace before go live
 
 1. **The photos** are cut out of the design export, so they are 1x only and look soft

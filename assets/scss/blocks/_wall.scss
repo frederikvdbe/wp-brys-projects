@@ -1,0 +1,122 @@
+.b-wall {
+	// Scales the offsets and spaces set in wall.php on smaller screens
+	--gap-scale: 1;
+
+	&__columns {
+		@extend .u-gap;
+		@apply grid grid-cols-3 items-start;
+	}
+
+	&__column {
+		@apply flex flex-col;
+
+		padding-top: calc(var(--offset) * var(--gap-scale));
+		will-change: transform;
+	}
+
+	&__tile {
+		width: var(--width);
+		margin-top: calc(var(--gap) * var(--gap-scale));
+
+		&:first-child {
+			margin-top: 0;
+		}
+
+		&--start  { align-self: flex-start; }
+		&--center { align-self: center; }
+		&--end    { align-self: flex-end; }
+	}
+
+	&__image {
+		@apply overflow-hidden bg-shell;
+
+		aspect-ratio: var(--ratio);
+
+		img {
+			@apply w-full h-full object-cover;
+		}
+	}
+
+	figcaption {
+		@apply flex gap-[1rem] mt-[0.875rem];
+
+		span:first-child {
+			@apply font-display italic normal-case tracking-normal text-[0.9375rem];
+		}
+	}
+
+	&__tile--end figcaption {
+		@apply justify-end;
+	}
+}
+
+@media (width < theme(--breakpoint-xl)) {
+	.b-wall {
+		--gap-scale: 0.6;
+
+		@apply mt-20;
+	}
+}
+
+@media (width < theme(--breakpoint-md)) {
+	.b-wall {
+		--gap-scale: 0.35;
+
+		&__columns {
+			@apply block gap-0;
+
+			columns: 2;
+			column-gap: 1rem;
+		}
+
+		// The columns from PHP dissolve, the photos flow into 2 CSS columns
+		&__column {
+			display: contents;
+		}
+
+		&__tile {
+			@apply break-inside-avoid;
+
+			width: max(var(--width), 80%);
+			margin-top: 0;
+			margin-bottom: calc(var(--gap) * var(--gap-scale) + 1.5rem);
+		}
+
+		&__tile--center,
+		&__tile--end {
+			margin-left: auto;
+		}
+
+		&__tile--center {
+			margin-right: auto;
+		}
+	}
+}
+
+@media (width < theme(--breakpoint-xl)) {
+	.b-page-intro {
+		h1 {
+			font-size: clamp(2.75rem, 6vw, 5rem);
+			line-height: 1.08;
+		}
+	}
+
+	.b-cta {
+		@apply mt-24;
+
+		> .o-container {
+			@apply pb-24;
+		}
+
+		h2 {
+			font-size: clamp(2.25rem, 5vw, 4rem);
+			line-height: 1.1;
+		}
+	}
+}
+
+@media (width < theme(--breakpoint-sm)) {
+	.b-page-intro > .o-container {
+		@apply pt-32;
+	}
+}
