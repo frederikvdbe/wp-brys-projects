@@ -11,7 +11,7 @@ $tiles = array(
 	array( 'image' => 'realisatie-badkamers.jpg', 'ratio' => '2/3', 'alt' => 'Badkamer in natuursteen', 'caption' => 'Badkamer · Latem' ),
 	array( 'image' => 'detail-groot.jpg', 'ratio' => '3/4', 'alt' => 'Badkamer in travertin' ),
 	array( 'image' => 'realisatie-microcement.jpg', 'ratio' => '1/1', 'alt' => 'Eettafel in microcement', 'caption' => 'Tafel · Deinze' ),
-	array( 'image' => 'detail-zwembad.jpg', 'ratio' => '3/4', 'alt' => 'Binnenzwembad met betonnen balken' ),
+	array( 'image' => 'detail-groot.jpg', 'ratio' => '4/5', 'alt' => 'Badkamer in travertin', 'caption' => 'Badkamer · Gavere', 'feature' => true ),
 	array( 'image' => 'realisatie-binnenafwerking.jpg', 'ratio' => '4/5', 'alt' => 'Slaapkamer met maatwerk kasten', 'caption' => 'Slaapkamer · Gent' ),
 	array( 'image' => 'hero.jpg', 'ratio' => '3/2', 'alt' => 'Keuken met microcement afwerking' ),
 	array( 'image' => 'detail-groot.jpg', 'ratio' => '5/7', 'alt' => 'Badkamer in travertin', 'caption' => 'Badkamer · Merelbeke' ),
@@ -20,7 +20,7 @@ $tiles = array(
 	array( 'image' => 'realisatie-badkamers.jpg', 'ratio' => '3/4', 'alt' => 'Badkamer in natuursteen' ),
 	array( 'image' => 'detail-zwembad.jpg', 'ratio' => '2/3', 'alt' => 'Binnenzwembad met betonnen balken', 'caption' => 'Zwembad · Oudenaarde' ),
 	array( 'image' => 'realisatie-binnenafwerking.jpg', 'ratio' => '4/3', 'alt' => 'Slaapkamer met maatwerk kasten' ),
-	array( 'image' => 'hero.jpg', 'ratio' => '3/4', 'alt' => 'Keuken met microcement afwerking', 'caption' => 'Keuken · Sint-Martens-Latem' ),
+	array( 'image' => 'hero.jpg', 'ratio' => '4/5', 'alt' => 'Keuken met microcement afwerking', 'caption' => 'Keuken · Sint-Martens-Latem', 'feature' => true ),
 	array( 'image' => 'detail-groot.jpg', 'ratio' => '1/1', 'alt' => 'Badkamer in travertin' ),
 );
 ?>

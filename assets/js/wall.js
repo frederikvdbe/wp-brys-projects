@@ -16,15 +16,14 @@ if ($wall && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
 			.from($image, { scale: 1.15, duration: 1.6, ease: 'power3.out' }, 0);
 	});
 
-	gsap.matchMedia().add('(min-width: 768px)', () => {
-		gsap.utils.toArray('.js-wall-column').forEach(($column) => {
-			const speed = parseFloat($column.dataset.speed) || 0;
-			if (!speed) return;
+	gsap.matchMedia().add('(min-width: 640px)', () => {
+		gsap.utils.toArray('.js-wall-tile[data-speed]').forEach(($tile) => {
+			const speed = parseFloat($tile.dataset.speed);
 
-			gsap.to($column, {
+			gsap.to($tile, {
 				y: () => speed * window.innerHeight,
 				ease: 'none',
-				scrollTrigger: { trigger: $wall, start: 'top bottom', end: 'bottom top', scrub: true, invalidateOnRefresh: true },
+				scrollTrigger: { trigger: $tile, start: 'top bottom', end: 'bottom top', scrub: true, invalidateOnRefresh: true },
 			});
 		});
 	});
