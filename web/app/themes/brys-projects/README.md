@@ -100,13 +100,70 @@ Other pages link to `/veelgestelde-vragen`.
 - Each topic is one `partials/blocks/faq.php` block, with the topic as its title.
 - To add a topic, add one more faq block to the template.
 
-## Two things to replace before go live
+## The Werkwijze page
+
+Template `page-templates/werkwijze.php`, set it on the page with slug `werkwijze`.
+
+| Block | File |
+| --- | --- |
+| Title and intro | `partials/blocks/page-intro.php` |
+| Large image | `partials/blocks/figure.php` |
+| The five steps | `partials/blocks/process.php` |
+| Closing call to action | `partials/blocks/cta.php` |
+
+The call to action links to `/contact#offerte`, which opens the quote form.
+
+## The Over ons page
+
+Template `page-templates/over-ons.php`, set it on the page with slug `over-ons`.
+
+| Block | File |
+| --- | --- |
+| Title and intro | `partials/blocks/page-intro.php` |
+| Large image | `partials/blocks/figure.php` |
+| Ons verhaal | `partials/blocks/lead.php` |
+| Closing call to action | `partials/blocks/cta.php` |
+
+`figure.php` takes `align`: the side where the image runs to the edge of the screen.
+
+## The Contact page
+
+Template `page-templates/contact.php`, set it on the page with slug `contact`.
+
+| Block | File |
+| --- | --- |
+| Title and intro | `partials/blocks/page-intro.php` |
+| Contact details and forms | `partials/blocks/contact.php` |
+
+- The contact details are a list in the template. Each row has a label and lines.
+- There is one tab per form: "Een vraag" and "Een offerte".
+- `assets/js/contact.js` switches the tabs. The arrow keys work too.
+- `/contact#offerte` opens the quote tab. Link to it from other pages.
+
+### Gravity Forms
+
+The template loads each form by its **title**, so the form id can differ per site.
+
+| Tab | Form title | Fields |
+| --- | --- | --- |
+| Een vraag | `Contact` | naam, e-mail, telefoon, vraag |
+| Een offerte | `Offerte` | naam, e-mail, telefoon, gemeente, type werk, start, omschrijving, foto's |
+
+- Create both forms on every site with exactly these titles.
+- The plugin's own css is off (`plugins/gravityforms.php`). All form styles live in
+  `assets/scss/components/_form.scss`.
+- Set a field to width "half" in the form editor to place two fields next to each other.
+- End each form with an html field for the privacy note.
+- Without Gravity Forms active, the page shows the e-mail address instead.
+
+## Three things to replace before go live
 
 1. **The photos** are cut out of the design export, so they are 1x only and look soft
    on a retina screen. The bottom left corner of `toepassingen.jpg` was retouched,
    because the heading was burned into the export. Replace all of them with the
    original photos.
 2. **The footer data** (address, e-mail, menu links) is hard coded in `footer.php`.
+3. **The phone number and social links** on the Contact page are placeholders.
 
 ## Build
 
@@ -116,5 +173,7 @@ npm run build   # writes to web/app/themes/brys-projects/assets/dist
 ```
 
 `assets/js/main.js` imports `main.scss`, so the dev server serves the styles through
-the script tag. In production `functions.php` reads `assets/dist/.vite/manifest.json`
+the script tag. That script runs after the first paint, so in dev `functions.php` also
+loads `main.scss` as a normal stylesheet. `main.js` removes that stylesheet once Vite
+has added its own style tag, so hot reload keeps working. In production `functions.php` reads `assets/dist/.vite/manifest.json`
 to find the hashed files.

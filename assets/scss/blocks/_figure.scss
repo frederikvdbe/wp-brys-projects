@@ -1,0 +1,40 @@
+// The image runs to the edge of the viewport on the side it is aligned to
+.b-figure {
+	--bleed: calc(max(var(--grid-gutter), (100vw - var(--grid-max-width)) / 2) * -1);
+
+	&--left &__image {
+		margin-left: var(--bleed);
+	}
+
+	&--right &__image {
+		margin-right: var(--bleed);
+	}
+}
+
+@media (width < theme(--breakpoint-xl)) {
+	.b-figure {
+		@apply mt-16;
+
+		&__image {
+			grid-column: 1 / -1;
+
+			img {
+				height: auto;
+				aspect-ratio: 4 / 3;
+			}
+		}
+	}
+}
+
+@media (width < theme(--breakpoint-md)) {
+	.b-figure {
+		&--left &__image,
+		&--right &__image {
+			margin-inline: calc(var(--grid-gutter) * -1);
+		}
+
+		figcaption {
+			padding-inline: var(--grid-gutter);
+		}
+	}
+}

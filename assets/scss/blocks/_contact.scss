@@ -1,0 +1,65 @@
+.b-contact {
+	&__details a:not(.c-link):hover {
+		color: var(--color-sage);
+	}
+
+	&__tab {
+		@apply relative cursor-pointer;
+
+		color: rgb(53 41 29 / 0.3);
+		transition: color 0.3s ease;
+
+		&:hover,
+		&[aria-selected="true"] {
+			color: var(--color-ink);
+		}
+
+		&[aria-selected="true"] {
+			@apply italic;
+		}
+
+		&:focus-visible {
+			outline: 1px solid currentColor;
+			outline-offset: 0.5rem;
+		}
+	}
+}
+
+@media (width < theme(--breakpoint-xl)) {
+	.b-contact {
+		@apply mt-16 pb-32;
+
+		&__tab {
+			font-size: clamp(1.75rem, 4vw, 2.5rem);
+			line-height: 1.2;
+		}
+
+		&__panel {
+			@apply mt-8;
+		}
+
+		.c-form {
+			@apply mt-10;
+		}
+	}
+}
+
+@media (width < theme(--breakpoint-lg)) {
+	.b-contact {
+		.o-grid > * {
+			grid-column: 1 / -1;
+		}
+
+		&__details {
+			@apply order-last mt-16;
+
+			max-width: 34rem;
+		}
+	}
+}
+
+@media (width < theme(--breakpoint-md)) {
+	.b-contact {
+		@apply pb-24;
+	}
+}

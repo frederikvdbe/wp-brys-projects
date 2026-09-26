@@ -126,6 +126,10 @@ function custom_enqueue_scripts() {
 		// The origin follows the scheme of the site, DDEV_PRIMARY_URL is not always https.
 		$origin = untrailingslashit( set_url_scheme( $_SERVER['DDEV_PRIMARY_URL'] ) ) . ':5173';
 
+		// Render blocking copy of the styles, so the page does not paint unstyled while
+		// main.js loads. main.js removes it once Vite has injected its own style tag.
+		wp_enqueue_style( 'vite-dev-styles', $origin . '/assets/scss/main.scss', array(), null );
+
 		wp_enqueue_script( 'vite-dev', $origin . '/@vite/client', false, null, false );
 		wp_enqueue_script( 'main', $origin . '/assets/js/main.js', false, null, false );
 
@@ -299,6 +303,6 @@ require_once ('includes/styleguide.php');
 
 //require_once('plugins/wpml.php');
 //require_once ('plugins/acf.php');
-//require_once ('plugins/gravityforms.php');
+require_once ('plugins/gravityforms.php');
 //require_once ('plugins/yoast.php');
 //require_once ('plugins/sentry.php');
