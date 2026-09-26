@@ -23,7 +23,7 @@ $image_alt = $image_alt ?? '';
 			 src="<?= get_template_directory_uri(); ?>/assets/dist/images/<?= $image; ?>"
 			 width="820" height="911" alt="<?= esc_attr( $image_alt ); ?>">
 
-		<div class="relative pt-[11.5rem] pb-[10.9375rem]">
+		<div class="b-hero__content relative flex flex-col justify-center pt-[4.9375rem] min-h-(--hero-height)">
 			<h1 class="text-[7.125rem] leading-[7.875rem]"><?= $title; ?></h1>
 
 			<p class="mt-[0.6875rem] max-w-[31.5rem]"><?= $text; ?></p>

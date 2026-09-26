@@ -26,12 +26,12 @@ $classes = $classes ?? '';
 			<?php foreach ( $pillars as $index => $pillar ) : ?>
 				<li class="sm:col-span-3<?= $index === 0 ? ' sm:col-start-2' : ''; ?>">
 
-					<h3 class="text-[1.84375rem] leading-[1.6875rem] flex gap-[0.875rem]">
+					<h3 class="text-[1.84375rem] leading-[1.6875rem] font-[450] flex gap-[0.875rem]">
 						<span class="text-sage"><?= $pillar['number']; ?></span>
 						<span><?= $pillar['title']; ?></span>
 					</h3>
 
-					<p class="mt-[2.8125rem] text-[1.1rem] leading-[1.625rem]"><?= $pillar['text']; ?></p>
+					<p class="mt-[1.75rem] text-[1.1rem] leading-[1.625rem]"><?= $pillar['text']; ?></p>
 
 				</li>
 			<?php endforeach; ?>

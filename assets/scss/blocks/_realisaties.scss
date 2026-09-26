@@ -1,3 +1,60 @@
+// Card hover: the image zooms in and goes a bit darker, the arrow turns to point
+// up and a sage rule draws in over the base rule, like in the menu overlay.
+.b-realisaties {
+	&__media {
+		background: var(--color-ink);
+
+		img {
+			transition: transform 1.2s $easing-outQuint, opacity .9s $easing-outQuint;
+		}
+	}
+
+	&__label {
+		transition: color .6s $easing-outQuint;
+
+		&::after {
+			@apply absolute left-0 right-0 origin-right;
+
+			content: '';
+			bottom: -1px;
+			height: 1px;
+			background: var(--color-sage);
+			transform: scaleX(0);
+			transition: transform .9s $easing-outQuint;
+		}
+	}
+
+	&__arrow {
+		@apply block;
+
+		transition: rotate .9s $easing-outQuint;
+	}
+
+	&__card:hover,
+	&__card:focus-visible {
+		outline: none;
+
+		.b-realisaties__media img {
+			transform: scale(1.05);
+			opacity: .85;
+		}
+
+		.b-realisaties__label {
+			color: var(--color-sage);
+
+			&::after {
+				@apply origin-left;
+
+				transform: scaleX(1);
+			}
+		}
+
+		.b-realisaties__arrow {
+			rotate: -90deg;
+		}
+	}
+}
+
 @media (width < theme(--breakpoint-xl)) {
 	.b-realisaties {
 		@apply mt-24;

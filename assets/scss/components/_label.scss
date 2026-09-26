@@ -17,4 +17,38 @@
 		letter-spacing: 0.1em;
 		color: rgb(53 41 29 / 0.7);
 	}
+
+	// Arrow next to the scroll hint. It slides out along its own direction and
+	// comes back in from the other side, on a loop.
+	.c-scroll-arrow {
+		@apply block overflow-hidden;
+
+		svg {
+			animation: scroll-arrow 2.4s $easing-outQuint infinite;
+		}
+
+		@media (prefers-reduced-motion: reduce) {
+			svg {
+				animation: none;
+			}
+		}
+	}
+}
+
+@keyframes scroll-arrow {
+	0%, 35% {
+		transform: translate(0, 0);
+	}
+
+	60% {
+		transform: translate(110%, 110%);
+	}
+
+	60.01% {
+		transform: translate(-110%, -110%);
+	}
+
+	100% {
+		transform: translate(0, 0);
+	}
 }

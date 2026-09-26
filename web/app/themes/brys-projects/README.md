@@ -10,7 +10,7 @@ WordPress fields.
 | Block | File |
 | --- | --- |
 | Hero | `partials/blocks/hero.php` |
-| Onze realisaties | `partials/blocks/realisaties.php` |
+| Onze diensten | `partials/blocks/realisaties.php` |
 | Statement and pillars | `partials/blocks/statement.php` |
 | Two images with text | `partials/blocks/detail.php` |
 | Refined by strength | `partials/blocks/toepassingen.php` |

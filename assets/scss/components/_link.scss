@@ -1,21 +1,40 @@
 @layer components {
-	// Italic serif link with a rule underneath, used for every call to action
+	// Italic serif link with a rule underneath, used for every call to action.
+	// On hover a sage rule draws in over the base rule, like in the menu overlay.
 	.c-link {
-		@apply inline-block font-display italic;
+		@apply relative inline-block font-display italic;
 
 		font-size: 1.25rem;   // 20px
 		line-height: 1.25rem;
 		padding-bottom: 0.4375rem;
-		border-bottom: 1px solid currentColor;
+		border-bottom: 1px solid var(--color-ink);
+		transition: color .6s $easing-outQuint;
+
+		&::after {
+			@apply absolute left-0 right-0 origin-right;
+
+			content: '';
+			bottom: -1px;
+			height: 1px;
+			background: var(--color-sage);
+			transform: scaleX(0);
+			transition: transform .9s $easing-outQuint;
+		}
 
 		&--sm {
 			font-size: 1.15625rem; // 18.5px, used in the site header
 			line-height: 1.15625rem;
 		}
 
-		&:hover {
-			border-bottom-color: var(--color-sage);
+		&:hover,
+		&:focus-visible {
 			color: var(--color-sage);
+
+			&::after {
+				@apply origin-left;
+
+				transform: scaleX(1);
+			}
 		}
 	}
 }

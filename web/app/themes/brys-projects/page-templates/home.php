@@ -20,13 +20,15 @@ get_header();
 	<div class="o-container">
 		<p class="c-eyebrow pt-[2.75rem] pl-[0.9375rem] flex items-center gap-[0.5625rem]">
 			Scroll
-			<?php get_template_part( 'partials/vectors/arrow-diagonal.svg', null, array( 'size' => 9 ) ); ?>
+			<span class="c-scroll-arrow">
+				<?php get_template_part( 'partials/vectors/arrow-diagonal.svg', null, array( 'size' => 9 ) ); ?>
+			</span>
 		</p>
 	</div>
 
 	<?php get_template_part( 'partials/blocks/realisaties', null, array(
-		'classes' => 'mt-[14.8125rem]',
-		'title'   => 'Onze realisaties',
+		'classes' => 'mt-[max(14.8125rem,calc(var(--hero-overhang)+4.75rem))]',
+		'title'   => 'Onze diensten',
 		'link'    => array( 'label' => 'Ontdek al onze realisaties', 'url' => '/realisaties' ),
 		'cards'   => array(
 			array(

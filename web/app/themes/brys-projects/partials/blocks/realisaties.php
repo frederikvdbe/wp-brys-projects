@@ -24,15 +24,19 @@ $classes = $classes ?? '';
 		<ul class="o-grid mt-[5.0625rem]">
 			<?php foreach ( $cards as $card ) : ?>
 				<li class="sm:col-span-4">
-					<a href="<?= esc_url( $card['url'] ); ?>" class="group block">
+					<a href="<?= esc_url( $card['url'] ); ?>" class="b-realisaties__card block">
 
-						<img class="w-full h-[40.625rem] object-cover"
-							 src="<?= get_template_directory_uri(); ?>/assets/dist/images/<?= $card['image']; ?>"
-							 width="504" height="650" alt="<?= esc_attr( $card['image_alt'] ?? '' ); ?>">
+						<span class="b-realisaties__media block overflow-hidden">
+							<img class="w-full h-[40.625rem] object-cover"
+								 src="<?= get_template_directory_uri(); ?>/assets/dist/images/<?= $card['image']; ?>"
+								 width="504" height="650" alt="<?= esc_attr( $card['image_alt'] ?? '' ); ?>">
+						</span>
 
-						<span class="c-label mt-[3.5rem] pb-[1.3125rem] flex items-center justify-between border-b border-ink">
+						<span class="b-realisaties__label c-label relative mt-[3.5rem] pb-[1.3125rem] flex items-center justify-between border-b border-ink">
 							<?= $card['label']; ?>
-							<?php get_template_part( 'partials/vectors/arrow-diagonal.svg' ); ?>
+							<span class="b-realisaties__arrow">
+								<?php get_template_part( 'partials/vectors/arrow-diagonal.svg' ); ?>
+							</span>
 						</span>
 
 					</a>
