@@ -1,0 +1,86 @@
+// Other rows fade out while one row is hovered
+.b-index {
+	&__row {
+		transition: opacity 0.5s ease;
+	}
+
+	&__title {
+		transition: transform 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+	}
+
+	&__list:hover &__row:not(:hover) {
+		opacity: 0.35;
+	}
+
+	&__row:hover &__title {
+		transform: translateX(1.5rem);
+	}
+
+	&__preview {
+		@apply fixed top-0 left-0 z-30 overflow-hidden pointer-events-none;
+
+		width: 19rem;
+		height: 24rem;
+		visibility: hidden;
+		opacity: 0;
+
+		img {
+			@apply absolute inset-0 w-full h-full object-cover;
+
+			opacity: 0;
+			transform: scale(1.08);
+			transition: opacity 0.4s ease, transform 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+
+			&.is-active {
+				opacity: 1;
+				transform: scale(1);
+			}
+		}
+	}
+}
+
+@media (width < theme(--breakpoint-xl)) {
+	.b-index {
+		@apply mt-32;
+
+		h2 {
+			font-size: clamp(2rem, 4vw, 2.7125rem);
+			line-height: 1.1;
+		}
+
+		&__list {
+			@apply mt-12;
+		}
+
+		&__row {
+			@apply py-8;
+		}
+
+		&__title {
+			font-size: clamp(1.75rem, 4vw, 3rem);
+			line-height: 1.1;
+		}
+	}
+}
+
+@media (width < theme(--breakpoint-lg)) {
+	.b-index {
+		&__row {
+			@apply gap-y-3;
+
+			> * {
+				grid-column: 1 / -1;
+			}
+		}
+
+		&__row:hover &__title {
+			transform: none;
+		}
+	}
+}
+
+@media (width < theme(--breakpoint-md)) {
+	.b-index {
+		@apply mt-24;
+	}
+}

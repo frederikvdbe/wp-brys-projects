@@ -1,0 +1,36 @@
+// Five columns on desktop, two on tablet, one on a phone
+@media (width < theme(--breakpoint-xl)) {
+	.b-steps {
+		@apply mt-32;
+
+		h2 {
+			grid-column: 1 / -1;
+
+			font-size: clamp(2.25rem, 5vw, 4rem);
+			line-height: 1.1;
+		}
+
+		&__intro {
+			grid-column: 1 / -1;
+			max-width: 34rem;
+		}
+
+		&__list {
+			@apply mt-16 grid-cols-2 gap-x-10 gap-y-12;
+		}
+
+		h3 {
+			@apply mt-6;
+		}
+	}
+}
+
+@media (width < theme(--breakpoint-md)) {
+	.b-steps {
+		@apply mt-24;
+
+		&__list {
+			@apply grid-cols-1 gap-y-10;
+		}
+	}
+}

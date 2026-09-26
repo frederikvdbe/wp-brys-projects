@@ -24,12 +24,12 @@
     "src": "assets/fonts/newsreader-normal-latin.woff2"
   },
   "assets/js/main.js": {
-    "file": "assets/main-BSiAzoWZ.js",
+    "file": "assets/main-D63AXQ-i.js",
     "name": "main",
     "src": "assets/js/main.js",
     "isEntry": true,
     "css": [
-      "assets/main-Br-oMjHs.css"
+      "assets/main-Do2LY-ts.css"
     ],
     "assets": [
       "assets/newsreader-normal-latin-DBQoWVJ5.woff2",

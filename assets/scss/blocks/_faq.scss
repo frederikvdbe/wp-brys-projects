@@ -1,0 +1,103 @@
+// Answers open with a height transition, interpolate-size makes height: auto animatable
+.b-faq {
+	interpolate-size: allow-keywords;
+
+	&__item {
+		&::details-content {
+			block-size: 0;
+			overflow: hidden;
+			transition: block-size 0.5s cubic-bezier(0.22, 1, 0.36, 1), content-visibility 0.5s allow-discrete;
+		}
+
+		&[open]::details-content {
+			block-size: auto;
+		}
+	}
+
+	&__question {
+		list-style: none;
+
+		&::-webkit-details-marker {
+			display: none;
+		}
+
+		&:hover {
+			color: var(--color-sage);
+		}
+	}
+
+	&__icon {
+		@apply relative shrink-0;
+
+		width: 1.0625rem;
+		height: 1.0625rem;
+
+		&::before,
+		&::after {
+			@apply absolute left-0 top-1/2 w-full;
+
+			content: '';
+			height: 1.1px;
+			background: currentColor;
+			transition: transform 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+		}
+
+		&::after {
+			transform: rotate(90deg);
+		}
+	}
+
+	&__item[open] &__icon::after {
+		transform: rotate(0deg);
+	}
+}
+
+@media (width < theme(--breakpoint-xl)) {
+	.b-faq {
+		@apply mt-32;
+
+		h2 {
+			font-size: clamp(2.25rem, 5vw, 4rem);
+			line-height: 1.1;
+		}
+
+		&__question {
+			@apply gap-8 py-6;
+		}
+
+		&__label {
+			font-size: clamp(1.25rem, 2.5vw, 1.625rem);
+			line-height: 1.3;
+		}
+
+		&__answer {
+			@apply pr-12;
+		}
+	}
+}
+
+@media (width < theme(--breakpoint-lg)) {
+	.b-faq {
+		&__intro {
+			@apply static;
+
+			grid-column: 1 / -1;
+		}
+
+		&__list {
+			@apply mt-8;
+
+			grid-column: 1 / -1;
+		}
+	}
+}
+
+@media (width < theme(--breakpoint-md)) {
+	.b-faq {
+		@apply mt-24;
+
+		&__answer {
+			@apply pr-0 pb-8;
+		}
+	}
+}

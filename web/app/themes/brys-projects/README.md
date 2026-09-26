@@ -75,6 +75,31 @@ How the photo wall works:
 
 The photos are placeholders: the design photos, reused with other crops.
 
+## The Microcement page
+
+Template `page-templates/microcement.php`, set it on the page with slug `microcement`.
+
+| Block | File |
+| --- | --- |
+| Heading, image and intro | `partials/blocks/showcase.php` |
+| Het materiaal | `partials/blocks/lead.php` |
+| Toepassingen, with a photo on hover | `partials/blocks/index-list.php` |
+| Kleur en textuur | `partials/blocks/tones.php` |
+| Werkwijze | `partials/blocks/steps.php` |
+| Closing call to action | `partials/blocks/cta.php` |
+
+The lighter panel uses `c-panel--left`: it starts at the left edge of the screen,
+because the image in the header bleeds to the left. The header image hangs 10rem
+into the panel, like on the homepage.
+
+## The FAQ page
+
+Template `page-templates/faq.php`, set it on the page with slug `veelgestelde-vragen`.
+Other pages link to `/veelgestelde-vragen`.
+
+- Each topic is one `partials/blocks/faq.php` block, with the topic as its title.
+- To add a topic, add one more faq block to the template.
+
 ## Two things to replace before go live
 
 1. **The photos** are cut out of the design export, so they are 1x only and look soft

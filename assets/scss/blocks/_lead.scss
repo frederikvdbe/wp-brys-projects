@@ -1,0 +1,44 @@
+// The design is only drawn for desktop. From the tablet breakpoint down the
+// text steps back to a readable size and the columns stack.
+@media (width < theme(--breakpoint-xl)) {
+	.b-lead {
+		@apply pt-24;
+
+		&__text {
+			font-size: clamp(1.625rem, 3.5vw, 2.75rem);
+			line-height: 1.3;
+		}
+
+		&__column {
+			@apply mt-10;
+		}
+	}
+}
+
+@media (width < theme(--breakpoint-lg)) {
+	.b-lead {
+		.o-grid > * {
+			grid-column: 1 / -1;
+		}
+
+		&__text {
+			@apply mt-2;
+		}
+
+		&__column {
+			@apply mt-0;
+
+			max-width: 34rem;
+		}
+
+		&__text + &__column {
+			@apply mt-6;
+		}
+	}
+}
+
+@media (width < theme(--breakpoint-md)) {
+	.b-lead {
+		@apply pt-16;
+	}
+}

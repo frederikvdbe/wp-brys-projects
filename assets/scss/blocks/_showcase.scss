@@ -1,0 +1,42 @@
+// The image runs from the left edge of the viewport
+.b-showcase {
+	&__image {
+		margin-left: calc(max(var(--grid-gutter), (100vw - var(--grid-max-width)) / 2) * -1);
+	}
+}
+
+// From the tablet breakpoint down the image goes full width and the text moves
+// under it. The overlap with the panel is off here.
+@media (width < theme(--breakpoint-xl)) {
+	.b-showcase {
+		> .o-container:first-child {
+			@apply pt-16;
+		}
+
+		h1 {
+			grid-column: 1 / -1;
+
+			font-size: clamp(2.75rem, 7vw, 5.5rem);
+			line-height: 1.08;
+		}
+
+		> .o-container:last-child {
+			@apply mt-12;
+		}
+
+		&__image {
+			grid-column: 1 / -1;
+			height: auto;
+			margin-bottom: 0;
+			aspect-ratio: 4 / 3;
+			margin-inline: calc(var(--grid-gutter) * -1);
+		}
+
+		&__text {
+			@apply pb-16;
+
+			grid-column: 1 / -1;
+			max-width: 34rem;
+		}
+	}
+}

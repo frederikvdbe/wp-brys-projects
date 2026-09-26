@@ -20,6 +20,12 @@
 		> * {
 			@apply relative z-[1];
 		}
+
+		// Mirrored: runs from the left edge of the viewport instead
+		&--left::before {
+			left: 0;
+			right: var(--panel-inset-left);
+		}
 	}
 }
 
