@@ -1,6 +1,6 @@
 </main>
 
-<?php get_template_part( 'partials/blocks/footer', null, array(
+<?php if ( ! get_query_var( 'hide_site_footer' ) ) get_template_part( 'partials/blocks/footer', null, array(
 	'address'  => array(
 		'Louis Delebecquelaan 34',
 		'9051 Sint-Denijs-Westrem',
@@ -37,7 +37,7 @@
 
 <?php wp_footer(); ?>
 
-<?php // get_template_part( 'partials/components/debug-grid' ); ?>
+<?php get_template_part( 'partials/components/debug-grid' ); ?>
 
 </body>
 </html>

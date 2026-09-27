@@ -300,6 +300,7 @@ require_once ('includes/disable-pingback.php');
 require_once('includes/nav.php');
 //require_once('includes/custom-admin.php');
 require_once ('includes/styleguide.php');
+require_once ('includes/prototypes.php');
 
 //require_once('plugins/wpml.php');
 //require_once ('plugins/acf.php');

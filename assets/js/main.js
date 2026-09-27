@@ -11,3 +11,4 @@ import './reveal.js';
 import './wall.js';
 import './index-preview.js';
 import './contact.js';
+import './prototypes.js';
