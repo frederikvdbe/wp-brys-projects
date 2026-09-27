@@ -7,12 +7,16 @@
  * @var string $image_alt
  * @var string $align    'left' or 'right': the side where the image bleeds to the edge
  * @var string $caption  Optional
+ * @var bool   $overhang Optional, the image hangs 10rem into the panel below it
  * @var string $classes
  */
 extract( $args );
 $classes = $classes ?? '';
 $align   = $align ?? 'right';
 $caption = $caption ?? '';
+if ( ! empty( $overhang ) ) {
+	$classes .= ' b-figure--overhang';
+}
 ?>
 
 <section class="b-figure b-figure--<?= $align; ?> <?= $classes; ?>">

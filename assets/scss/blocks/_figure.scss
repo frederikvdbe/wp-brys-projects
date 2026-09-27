@@ -9,11 +9,21 @@
 	&--right &__image {
 		margin-right: var(--bleed);
 	}
+
+	&--overhang {
+		@apply relative z-10;
+
+		margin-bottom: -10rem;
+	}
 }
 
 @media (width < theme(--breakpoint-xl)) {
 	.b-figure {
 		@apply mt-16;
+
+		&--overhang {
+			margin-bottom: 0;
+		}
 
 		&__image {
 			grid-column: 1 / -1;
