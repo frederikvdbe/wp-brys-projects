@@ -1,4 +1,5 @@
 <h1>
-	<?php _e('Helaas, deze pagina is niet gevonden..', 'project-frontend'); ?>
+	<?php _e( 'Deze pagina bestaat niet (meer)', 'project-frontend' ); ?>
 </h1>
-<p><?php _e('Mogelijk bestaat deze pagina niet meer, of is ze verhuisd. Keer terug naar de ', 'project-frontend');?><a href="<?php echo site_url(); ?>"><?php _e('homepagina', 'project-frontend'); ?></a><?php _e(' of kies een pagina uit het hoofdmenu...', 'project-frontend'); ?></p>
+<p><?php _e( 'Misschien is ze verhuisd of verwijderd. Ga terug naar de startpagina of kies een pagina in het menu.', 'project-frontend' ); ?></p>
+<p><a class="c-link" href="<?php echo home_url( '/' ); ?>"><?php _e( 'Bekijk de startpagina', 'project-frontend' ); ?></a></p>

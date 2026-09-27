@@ -8,10 +8,10 @@ get_header();
 
 <?php get_template_part( 'partials/blocks/hero', null, array(
 	'title'     => 'Meesterschap<br>in afwerking',
-	'text'      => 'Het perfecte evenwicht tussen ruwe kracht en verfijnde finesse. Vanuit vakmanschap en met oog voor ontwerp maakt Brys Projects van muren, vloeren en meubels één naadloos geheel met karakter.',
+	'text'      => 'Het evenwicht tussen ruwe kracht en verfijnd detail. Wij werken vanuit vakmanschap en met oog voor ontwerp. Zo worden muren, vloeren en meubels één geheel met karakter.',
 	'link'      => array( 'label' => 'Ontdek onze realisaties', 'url' => '/realisaties' ),
 	'image'     => 'hero.jpg',
-	'image_alt' => 'Keuken met microcement afwerking',
+	'image_alt' => 'Keuken met microcementafwerking',
 ) ); ?>
 
 <?php // Lighter panel that runs from the scroll hint down to halfway the detail block ?>
@@ -19,7 +19,7 @@ get_header();
 
 	<div class="o-container">
 		<p class="c-eyebrow pt-[2.75rem] pl-[0.9375rem] flex items-center gap-[0.5625rem]">
-			Scroll
+			Verder
 			<span class="c-scroll-arrow">
 				<?php get_template_part( 'partials/vectors/arrow-diagonal.svg', null, array( 'size' => 9 ) ); ?>
 			</span>
@@ -59,17 +59,17 @@ get_header();
 			array(
 				'number' => '01',
 				'title'  => 'Vakmanschap',
-				'text'   => 'Wij werken met een eigen ploeg, geen onderaannemers. Dezelfde mensen staan van de eerste tot de laatste dag op uw werf. Elke laag wordt met de hand aangebracht, door vakmensen die het materiaal kennen.',
+				'text'   => 'Wij werken met een eigen ploeg, zonder onderaannemers. Dezelfde mensen staan van de eerste tot de laatste dag op uw werf. Elke laag wordt met de hand aangebracht door vakmensen die het materiaal kennen.',
 			),
 			array(
 				'number' => '02',
 				'title'  => 'Materiaal',
-				'text'   => 'Microcement, beton, hout of steen: wij kiezen wat bij de ruimte past. Microcement gaat meestal over uw bestaande vloer of tegels, dus zonder zwaar breekwerk. Slijtvast, waterdicht en gemaakt voor dagelijks gebruik.',
+				'text'   => 'Microcement, beton, hout of steen: wij kiezen wat bij de ruimte past. Microcement gaat meestal over uw bestaande vloer of tegels, zonder zwaar breekwerk. Slijtvast, water- en vlekwerend, en gemaakt voor dagelijks gebruik.',
 			),
 			array(
 				'number' => '03',
 				'title'  => 'Zekerheid',
-				'text'   => 'Eén aanspreekpunt, van het eerste gesprek tot de oplevering. Wij nemen het volledige project in handen en bewaken planning en budget. U hoeft niets te coördineren.',
+				'text'   => 'Eén aanspreekpunt, van het eerste gesprek tot de oplevering. Wij bewaken planning en budget. U hoeft niets te coördineren.',
 			),
 		),
 	) ); ?>
@@ -78,17 +78,17 @@ get_header();
 		'classes'     => 'mt-[13.25rem]',
 		'image_large' => array( 'file' => 'detail-groot.jpg', 'alt' => 'Badkamer in travertin' ),
 		'image_small' => array( 'file' => 'detail-zwembad.jpg', 'alt' => 'Binnenzwembad met betonnen balken' ),
-		'text'        => 'Wilt u graag in een bijzonder pand wonen, maar ziet u op tegen het renovatieproces en alles wat daarbij komt kijken? De financiële stress, het vele werk en de ontelbare keuzes? Hier bent u aan het juiste adres.',
-		'link'        => array( 'label' => 'Ontdek onze realisaties', 'url' => '/realisaties' ),
+		'text'        => 'Een bijzonder pand verdient een afwerking die klopt. Wij nemen u de werken volledig uit handen, tegen een vaste prijs. U kiest, wij voeren uit.',
+		'link'        => array( 'label' => 'Bekijk onze werkwijze', 'url' => '/werkwijze' ),
 	) ); ?>
 
 </div>
 
 <?php get_template_part( 'partials/blocks/toepassingen', null, array(
 	'classes'   => 'mt-[12.8125rem]',
-	'title'     => 'Refined by strength',
-	'text'      => 'Wilt u graag in een bijzonder pand wonen, maar ziet u op tegen het renovatieproces en alles wat daarbij komt kijken? De financiële stress, het vele werk en de ontelbare keuzes? Hier bent u aan het juiste adres.',
-	'link'      => array( 'label' => 'Ontdek onze toepassingen', 'url' => '/toepassingen' ),
+	'title'     => 'Eén materiaal, elke vorm',
+	'text'      => 'Van inloopdouche tot keukeneiland, van trap tot tafel. Microcement volgt elke lijn van de ruimte, zonder voeg of drempel.',
+	'link'      => array( 'label' => 'Ontdek microcement', 'url' => '/microcement' ),
 	'image'     => 'toepassingen.jpg',
 	'image_alt' => 'Detail van een afgewerkt meubel',
 ) ); ?>

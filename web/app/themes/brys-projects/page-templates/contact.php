@@ -48,11 +48,11 @@ get_header();
 		array(
 			'id'    => 'offerte',
 			'label' => 'Een offerte',
-			'text'  => 'Vertel ons kort over uw project. Daarna plannen wij een bezoek ter plaatse, zodat u een vaste prijs krijgt.',
+			'text'  => 'Vertel ons kort over uw project. Daarna plannen wij een bezoek ter plaatse. Zo krijgt u een vaste prijs.',
 			'form'  => 'Offerte',
 		),
 	),
-	'fallback' => 'Mail ons op <a class="underline" href="mailto:sales@brys-projects.be">sales@brys-projects.be</a>.',
+	'fallback' => 'Liever mailen? Schrijf naar <a class="underline" href="mailto:sales@brys-projects.be">sales@brys-projects.be</a>.',
 ) ); ?>
 
 <?php get_footer(); ?>

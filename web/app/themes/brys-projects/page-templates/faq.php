@@ -17,11 +17,11 @@ get_header();
 	'items'   => array(
 		array(
 			'question' => 'Wat kost microcement?',
-			'answer'   => 'De prijs hangt af van de oppervlakte, de staat van de ondergrond en de toepassing. Een douche vraagt meer detailwerk dan een open vloer. Na een bezoek ter plaatse krijgt u een vaste prijs voor het hele project, zonder verrassingen achteraf.',
+			'answer'   => 'De prijs hangt af van de oppervlakte, de staat van de ondergrond en de toepassing. Een douche vraagt meer detailwerk dan een open vloer. Na een bezoek ter plaatse krijgt u een vaste prijs voor het hele project.',
 		),
 		array(
 			'question' => 'Kan het over mijn bestaande tegels?',
-			'answer'   => 'Meestal wel. De tegels moeten vast liggen en vlak zijn. Wij vullen de voegen op en brengen een wapeningsnet aan, zodat de voegen later niet zichtbaar worden.',
+			'answer'   => 'Meestal wel. De tegels moeten vast liggen en vlak zijn. Wij vullen de voegen op en brengen een wapeningsnet aan. Zo tekenen de voegen later niet door.',
 		),
 		array(
 			'question' => 'Is het geschikt voor een inloopdouche?',
@@ -29,19 +29,23 @@ get_header();
 		),
 		array(
 			'question' => 'Krijgt microcement barsten?',
-			'answer'   => 'Een fijne haarscheur kan ontstaan als de ondergrond werkt, bijvoorbeeld bij een jonge chape. Daarom controleren wij de ondergrond vooraf en werken wij met een wapeningsnet. Is de ondergrond niet stabiel genoeg, dan zeggen wij dat eerlijk.',
+			'answer'   => 'Een fijne haarscheur kan ontstaan als het gebouw werkt, bijvoorbeeld door zetting. Daarom controleren wij de ondergrond vooraf en werken wij met een wapeningsnet. Een nieuwe chape moet eerst droog genoeg zijn. Dat meten wij. Is de ondergrond niet stabiel genoeg, dan zeggen wij dat eerlijk.',
 		),
 		array(
 			'question' => 'Hoe onderhoud ik het?',
-			'answer'   => 'Met lauw water en een pH-neutrale zeep. Vermijd schuurmiddelen en agressieve producten. In zones waar veel gelopen wordt, frissen wij de vernis na enkele jaren op.',
+			'answer'   => 'Met lauw water en een pH-neutrale zeep. Vermijd schuurmiddelen en agressieve producten. Op het keukenblad veegt u zuren zoals citroen of azijn best meteen weg. In zones waar veel gelopen wordt, frissen wij de vernis na enkele jaren op.',
 		),
 		array(
 			'question' => 'Hoe lang duren de werken?',
-			'answer'   => 'Microcement wordt in lagen aangebracht, en elke laag moet drogen. Een badkamer of vloer duurt meestal één tot twee weken. U krijgt de planning vooraf, bij de offerte.',
+			'answer'   => 'Microcement wordt in lagen aangebracht en elke laag moet drogen. Een badkamer of vloer duurt meestal één tot twee weken. U krijgt de planning vooraf, bij de offerte.',
 		),
 		array(
 			'question' => 'Wanneer raden wij het af?',
-			'answer'   => 'Op een ondergrond die nog werkt of vochtig is. Of als u een volledig egale kleur wilt, zoals bij een gietvloer. Microcement is met de hand gemaakt: kleine nuances in tint en spaanslag horen erbij.',
+			'answer'   => 'Op een ondergrond die nog werkt of vochtig is. Of als u een volledig egale kleur wilt, zoals bij een gietvloer. Microcement is met de hand gemaakt: nuances in tint en spaanslag horen erbij.',
+		),
+		array(
+			'question' => 'Is microcement hetzelfde als beton ciré of microtopping?',
+			'answer'   => 'Het gaat om dezelfde familie van afwerkingen. De namen worden vaak door elkaar gebruikt. De samenstelling verschilt wel per merk en systeem.',
 		),
 	),
 ) ); ?>
