@@ -37,7 +37,7 @@
 
 <?php wp_footer(); ?>
 
-<?php get_template_part( 'partials/components/debug-grid' ); ?>
+<?php // get_template_part( 'partials/components/debug-grid' ); ?>
 
 </body>
 </html>

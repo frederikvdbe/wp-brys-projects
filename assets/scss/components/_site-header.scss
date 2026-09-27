@@ -2,7 +2,7 @@
 	.c-site-header {
 		@apply relative z-20;
 
-		border-bottom: 1px solid var(--color-ink);
+		border-bottom: 1px solid color-mix(in srgb, var(--color-ink) 20%, transparent);
 
 		&__inner {
 			@apply grid items-center;
