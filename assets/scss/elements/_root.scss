@@ -18,7 +18,10 @@ body {
 	font-weight: 350;
 	line-height: 1.75rem;
 	color: var(--color-ink);
-	background: var(--color-paper);
+	// Microcement tile under a paper layer. The paper layer sets how strong the texture shows.
+	background:
+		linear-gradient(color-mix(in srgb, var(--color-paper) 80%, transparent)),
+		var(--color-paper) url("@/images/microcement.webp") repeat 0 0 / 18.75rem;
 
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
