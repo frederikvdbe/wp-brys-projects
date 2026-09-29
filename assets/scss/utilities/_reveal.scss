@@ -22,10 +22,11 @@
 	background: var(--color-ink);
 }
 
-// The mask around each line clips at the line box, give descenders some room
+// The mask around each line clips at the line box. Tight line heights put ascenders,
+// descenders and round letters outside it, so give the mask room on every side.
 .c-reveal-line-mask {
-	padding-bottom: 0.12em;
-	margin-bottom: -0.12em;
+	padding: 0.15em 0.1em 0.2em;
+	margin: -0.15em -0.1em -0.2em;
 }
 
 // Page transition: the old page fades out, the new one fades in and rises a little.

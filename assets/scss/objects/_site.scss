@@ -1,3 +1,5 @@
+// Clip sideways overflow: blocks that bleed to 100vw also cover the scrollbar width
 .site-main {
 	flex: 1;
+	overflow-x: clip;
 }
