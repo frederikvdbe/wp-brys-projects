@@ -33,7 +33,7 @@ jobs:
 
             - name: Sync
               env:
-                  dest: 'shared2be@ssh006.webhosting.be:/data/sites/web/shared2be/sites/brysprojects/staging'
+                  dest: 'shared2be@ssh006.webhosting.be:/data/sites/web/shared2be/subsites/brys-projects.be/staging'
               run: |
                   echo "${{ secrets.DEPLOY_KEY }}" > deploy_key
                   chmod 600 ./deploy_key
