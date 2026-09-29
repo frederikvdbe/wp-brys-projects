@@ -23,7 +23,7 @@ jobs:
               env:
                   ACF_PRO_KEY: ${{ secrets.ACF_PRO_KEY }}
                   WP_PLUGIN_GF_KEY: ${{ secrets.WP_PLUGIN_GF_KEY }}
-                  COMPOSER_AUTH: ${{ secrets.ACF_AUTH_JSON }}
+                  COMPOSER_AUTH: ${{ secrets.ACF_AUTH_JSON_STAGING }}
               run: |
                   composer install --ignore-platform-reqs --no-dev
                   npm install
