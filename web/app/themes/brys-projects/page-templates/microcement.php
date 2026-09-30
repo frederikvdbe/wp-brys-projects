@@ -18,7 +18,7 @@ get_header();
 <div class="c-panel c-panel--left" style="--panel-inset-bottom: 0">
 
 	<?php get_template_part( 'partials/blocks/lead', null, array(
-		'classes' => 'pt-[22rem]',
+		'classes' => 'b-lead--left pt-[32.15625rem]',
 		'eyebrow' => 'Het materiaal',
 		'lead'    => 'Een mengsel van cement, harsen en minerale pigmenten, in dunne lagen met de spaan aangebracht. Elke haal laat een spoor na. Zo zijn geen twee oppervlakken hetzelfde.',
 		'columns' => array(

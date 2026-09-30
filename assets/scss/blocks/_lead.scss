@@ -1,3 +1,23 @@
+// Variant that starts at column 2. The label moves above the lead, as it no
+// longer fits next to it. The text columns start one column further in.
+@media (width >= theme(--breakpoint-xl)) {
+	.b-lead--left {
+		.c-eyebrow {
+			grid-column: 2 / span 8;
+			padding-top: 0;
+			margin-bottom: -2rem; // takes back half of the grid row gap
+		}
+
+		.b-lead__text {
+			grid-column: 2 / span 8;
+		}
+
+		.b-lead__text + .b-lead__column {
+			grid-column: 3 / span 4;
+		}
+	}
+}
+
 // The design is only drawn for desktop. From the tablet breakpoint down the
 // text steps back to a readable size and the columns stack.
 @media (width < theme(--breakpoint-xl)) {

@@ -32,12 +32,12 @@
 			padding-bottom: 4rem; // same as the grid gap between image and text
 		}
 
-		// Bottom lines up with the big image, which hangs 10rem into the panel
+		// Sits half its height lower than the bottom of the big image, which hangs 10rem into the panel
 		&__small {
 			grid-column: 1 / span 3;
 			grid-row: 2;
 			align-self: end;
-			margin-bottom: -10rem;
+			margin-bottom: calc(-10rem - 30.3125rem / 2);
 		}
 	}
 }
