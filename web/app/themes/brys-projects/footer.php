@@ -1,7 +1,7 @@
 </main>
 
 <?php if ( ! get_query_var( 'hide_site_footer' ) ) get_template_part( 'partials/blocks/site-footer', null, array(
-	'lead'    => 'Binnenafwerking, badkamers en microcement. Met één ploeg, van plan tot oplevering.',
+	'lead'    => 'De laatste laag is de laag die u elke dag aanraakt. Wij brengen ze met de hand aan.',
 	'email'   => 'sales@brys-projects.be',
 	'columns' => array(
 		array(

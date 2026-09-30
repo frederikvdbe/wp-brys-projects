@@ -28,7 +28,7 @@ $image_alt = $image_alt ?? '';
 		<div class="b-hero__content relative flex flex-col justify-center pt-[4.9375rem] min-h-(--hero-height)">
 			<h1 class="text-[7.125rem] leading-[7.875rem]" data-reveal="lines"><?= $title; ?></h1>
 
-			<p class="mt-[0.6875rem] max-w-[31.5rem]" data-reveal="fade"><?= $text; ?></p>
+			<p class="mt-[0.6875rem] max-w-[31rem]" data-reveal="fade"><?= $text; ?></p>
 
 			<div class="flex mt-[4.25rem]" data-reveal="fade">
 				<a href="<?= esc_url( $link['url'] ); ?>" class="c-link"><?= $link['label']; ?></a>
