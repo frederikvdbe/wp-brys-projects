@@ -116,6 +116,82 @@ function brys_nav_prototypes() {
 	);
 }
 
+// Toepassingen prototypes: every layout on /toepassingen-prototypes, one per page
+// on /toepassingen-prototypes/<slug>. None of them need a mouse.
+function brys_toepassingen_prototypes() {
+	return array(
+		'huidig' => array(
+			'status' => 'Bestaand',
+			'name'   => 'Huidig',
+			'text'   => 'Lijst met grote titels. De foto volgt de muis, dus op gsm is er geen beeld.',
+		),
+		'lijst-beeld' => array(
+			'status' => 'Nieuw',
+			'name'   => 'Lijst met beeld',
+			'text'   => 'Dezelfde lijst, maar elke rij heeft een kleine foto die altijd zichtbaar is.',
+		),
+		'raster' => array(
+			'status' => 'Nieuw',
+			'name'   => 'Raster',
+			'text'   => 'Zes kaarten in drie kolommen: foto, nummer, titel en tekst. Op gsm onder elkaar.',
+		),
+		'afwisselend' => array(
+			'status' => 'Nieuw',
+			'name'   => 'Afwisselend',
+			'text'   => 'Eén toepassing per rij. De foto staat om beurten links en rechts, de tekst ernaast.',
+		),
+		'strook' => array(
+			'status' => 'Nieuw',
+			'name'   => 'Strook',
+			'text'   => 'Een rij kaarten die je opzij veegt. Op gsm met de duim, op desktop met pijlen.',
+		),
+		'uitklap' => array(
+			'status' => 'Nieuw',
+			'name'   => 'Uitklap',
+			'text'   => 'Een korte lijst met titels. Tik op een titel om de foto en de tekst te zien.',
+		),
+	);
+}
+
+// Shared content for the toepassingen prototypes, the same as on the microcement page
+function brys_toepassingen_proto_data() {
+	return array(
+		'title' => 'Toepassingen',
+		'items' => array(
+			array(
+				'title' => 'Vloeren',
+				'text'  => 'Eén doorlopende vloer door de hele verdieping, zonder drempels of voegen. Geschikt voor vloerverwarming.',
+				'image' => 'toepassingen.jpg',
+			),
+			array(
+				'title' => 'Badkamer en douche',
+				'text'  => 'Wanden, vloer en inloopdouche in één materiaal. Zonder voegen zetten vuil en kalk zich minder snel vast.',
+				'image' => 'realisatie-badkamers.jpg',
+			),
+			array(
+				'title' => 'Keuken',
+				'text'  => 'Werkbladen, spatwanden en eilanden. Vlekwerend dankzij de afwerklaag en bestand tegen normale keukenwarmte. Hete potten zet u op een onderlegger.',
+				'image' => 'hero.jpg',
+			),
+			array(
+				'title' => 'Wanden',
+				'text'  => 'Een zachte, minerale textuur, van woonkamer tot inkomhal. Ook op gyproc en bestaande pleister.',
+				'image' => 'realisatie-binnenafwerking.jpg',
+			),
+			array(
+				'title' => 'Trappen',
+				'text'  => 'Treden en stootborden in hetzelfde materiaal als de vloer. Zo vormt de trap één geheel met de ruimte.',
+				'image' => 'detail-groot.jpg',
+			),
+			array(
+				'title' => 'Meubels en maatwerk',
+				'text'  => 'Tafels, banken, wastafels en kasten. Wij werken ook bestaande meubels opnieuw af.',
+				'image' => 'realisatie-microcement.jpg',
+			),
+		),
+	);
+}
+
 // Shared content for the footer prototypes
 function brys_footer_proto_data() {
 	return array(
@@ -160,11 +236,11 @@ add_action( 'template_redirect', function () {
 		exit;
 	}
 
-	if ( ! preg_match( '#^(hero|cta|footer|nav)-prototypes(?:/([a-z-]+))?$#', $path, $match ) ) return;
+	if ( ! preg_match( '#^(hero|cta|footer|nav|toepassingen)-prototypes(?:/([a-z-]+))?$#', $path, $match ) ) return;
 
 	$type   = $match[1];
 	$slug   = $match[2] ?? '';
-	$protos = array( 'hero' => 'brys_prototypes', 'cta' => 'brys_cta_prototypes', 'footer' => 'brys_footer_prototypes', 'nav' => 'brys_nav_prototypes' )[ $type ]();
+	$protos = array( 'hero' => 'brys_prototypes', 'cta' => 'brys_cta_prototypes', 'footer' => 'brys_footer_prototypes', 'nav' => 'brys_nav_prototypes', 'toepassingen' => 'brys_toepassingen_prototypes' )[ $type ]();
 	$label  = ( $type === 'cta' ? 'CTA' : ucfirst( $type ) ) . ' prototypes';
 
 	if ( $slug && ! isset( $protos[ $slug ] ) ) return;

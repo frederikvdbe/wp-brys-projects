@@ -36,3 +36,27 @@ if ($navButton && $siteHeader) {
 
 	$toggle.addEventListener('click', () => document.querySelector('.js-menu-open')?.click());
 }
+
+
+// Toepassingen: Strook. Arrows scroll one card, the counter follows the first card in view
+document.querySelectorAll('.js-tp-strook').forEach($strook => {
+	const $track = $strook.querySelector('.js-tp-strook-track');
+	const $cards = [...$track.children];
+	const $count = $strook.querySelector('.js-tp-strook-count');
+	const $prev = $strook.querySelector('.js-tp-strook-prev');
+	const $next = $strook.querySelector('.js-tp-strook-next');
+
+	const step = () => $cards[1].offsetLeft - $cards[0].offsetLeft;
+
+	const update = () => {
+		const index = Math.round($track.scrollLeft / step());
+		$count.textContent = String(index + 1).padStart(2, '0');
+		$prev.disabled = $track.scrollLeft <= 2;
+		$next.disabled = $track.scrollLeft >= $track.scrollWidth - $track.clientWidth - 2;
+	};
+
+	$prev.addEventListener('click', () => $track.scrollBy({ left: -step(), behavior: 'smooth' }));
+	$next.addEventListener('click', () => $track.scrollBy({ left: step(), behavior: 'smooth' }));
+	$track.addEventListener('scroll', update, { passive: true });
+	update();
+});

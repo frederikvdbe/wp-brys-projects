@@ -7,6 +7,7 @@ $groups = array(
 	'cta'    => array( 'name' => 'CTA', 'text' => 'Oproep tot actie onderaan een pagina.', 'protos' => brys_cta_prototypes() ),
 	'footer' => array( 'name' => 'Footer', 'text' => 'Voettekst van de site.', 'protos' => brys_footer_prototypes() ),
 	'nav'    => array( 'name' => 'Navigatie', 'text' => 'Gedrag van de header bij het scrollen.', 'protos' => brys_nav_prototypes() ),
+	'toepassingen' => array( 'name' => 'Toepassingen', 'text' => 'Overzicht van de toepassingen op de microcementpagina.', 'protos' => brys_toepassingen_prototypes() ),
 );
 
 get_header();

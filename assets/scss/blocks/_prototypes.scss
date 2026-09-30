@@ -1382,3 +1382,501 @@
 		transform: translateY(-100%);
 	}
 }
+
+
+// Toepassingen prototypes (/toepassingen-prototypes) ----------------------------
+
+// Light panel behind each option, like on the microcement page
+.b-proto-stage {
+	padding-block: 8rem 10rem;
+	background: var(--color-shell);
+
+	&--single {
+		padding-block: 14rem 12rem;
+	}
+
+	@media (width < theme(--breakpoint-xl)) {
+		padding-block: 4rem 6rem;
+
+		&--single {
+			padding-block: 6rem 8rem;
+		}
+	}
+
+	// The index list brings its own top margin
+	.b-index {
+		margin-top: 0;
+	}
+}
+
+.b-tp-heading {
+	font-size: 2.7125rem;
+	line-height: 2.625rem;
+
+	@media (width < theme(--breakpoint-xl)) {
+		font-size: clamp(2rem, 4vw, 2.7125rem);
+		line-height: 1.1;
+	}
+}
+
+// Lijst met beeld
+.b-tp-lijst {
+	&__list {
+		margin-top: 5.0625rem;
+		border-bottom: 1px solid var(--color-ink);
+	}
+
+	&__row {
+		align-items: center;
+		padding-block: 2rem;
+		border-top: 1px solid var(--color-ink);
+	}
+
+	&__num {
+		grid-column: 1;
+		opacity: 0.6;
+	}
+
+	&__image {
+		grid-column: 2 / span 2;
+		width: 100%;
+		aspect-ratio: 4 / 3;
+		object-fit: cover;
+	}
+
+	&__title {
+		grid-column: 4 / span 4;
+		font-size: 3.5rem;
+		line-height: 3.75rem;
+	}
+
+	&__text {
+		grid-column: 8 / span 4;
+		font-size: 1.1rem;
+		line-height: 1.625rem;
+	}
+
+	@media (width < theme(--breakpoint-lg)) {
+		&__list {
+			margin-top: 3rem;
+		}
+
+		// Doubled class so it wins over the o-grid gap
+		&__row.o-grid {
+			grid-template-columns: 6.5rem 1fr;
+			gap: 0.75rem 1.25rem;
+			padding-block: 1.5rem;
+		}
+
+		&__num {
+			display: none;
+		}
+
+		&__image {
+			grid-column: 1;
+			grid-row: span 2;
+			align-self: start;
+			aspect-ratio: 1;
+		}
+
+		&__title,
+		&__text {
+			grid-column: 2;
+		}
+
+		&__title {
+			font-size: 1.625rem;
+			line-height: 1.15;
+		}
+
+		&__text {
+			font-size: 0.95rem;
+			line-height: 1.45;
+		}
+	}
+}
+
+// Raster
+.b-tp-raster {
+	&__grid {
+		margin-top: 5.0625rem;
+		row-gap: 6rem;
+	}
+
+	&__card {
+		grid-column: span 4;
+	}
+
+	&__media img {
+		display: block;
+		width: 100%;
+		aspect-ratio: 4 / 5;
+		object-fit: cover;
+	}
+
+	&__num {
+		margin-top: 1.75rem;
+		opacity: 0.6;
+	}
+
+	&__title {
+		margin-top: 0.75rem;
+		font-size: 2.25rem;
+		line-height: 2.5rem;
+	}
+
+	&__text {
+		margin-top: 1rem;
+		max-width: 26rem;
+		font-size: 1.1rem;
+		line-height: 1.625rem;
+	}
+
+	@media (width < theme(--breakpoint-xl)) {
+		&__grid {
+			margin-top: 3rem;
+			row-gap: 3.5rem;
+		}
+
+		&__card {
+			grid-column: span 6;
+		}
+
+		&__title {
+			font-size: 1.625rem;
+			line-height: 1.15;
+		}
+	}
+
+	@media (width < theme(--breakpoint-sm)) {
+		&__card {
+			grid-column: 1 / -1;
+		}
+
+		&__media img {
+			aspect-ratio: 3 / 2;
+		}
+	}
+}
+
+// Afwisselend
+.b-tp-afw {
+	&__row {
+		align-items: center;
+		margin-top: 8rem;
+
+		&:first-of-type {
+			margin-top: 5.0625rem;
+		}
+	}
+
+	&__media {
+		grid-column: 1 / span 6;
+		grid-row: 1;
+
+		img {
+			display: block;
+			width: 100%;
+			aspect-ratio: 4 / 3;
+			object-fit: cover;
+		}
+	}
+
+	&__body {
+		grid-column: 8 / span 4;
+		grid-row: 1;
+	}
+
+	.is-flipped &__media {
+		grid-column: 7 / span 6;
+	}
+
+	.is-flipped &__body {
+		grid-column: 2 / span 4;
+	}
+
+	&__title {
+		margin-top: 1.25rem;
+		font-size: 3.5rem;
+		line-height: 3.75rem;
+	}
+
+	&__text {
+		margin-top: 1.5rem;
+		max-width: 28rem;
+		font-size: 1.1rem;
+		line-height: 1.625rem;
+	}
+
+	@media (width < theme(--breakpoint-lg)) {
+		&__row,
+		&__row:first-of-type {
+			margin-top: 3.5rem;
+		}
+
+		&__row {
+			row-gap: 1.5rem;
+		}
+
+		&__media,
+		&__body,
+		.is-flipped &__media,
+		.is-flipped &__body {
+			grid-column: 1 / -1;
+			grid-row: auto;
+		}
+
+		&__title {
+			margin-top: 0.75rem;
+			font-size: 1.875rem;
+			line-height: 1.15;
+		}
+
+		&__text {
+			margin-top: 0.75rem;
+		}
+	}
+}
+
+// Strook
+.b-tp-strook {
+	&__head {
+		display: flex;
+		align-items: flex-end;
+		justify-content: space-between;
+		gap: 2rem;
+	}
+
+	&__controls {
+		display: flex;
+		align-items: center;
+		gap: 0.75rem;
+
+		.b-proto-caption {
+			margin-right: 0.75rem;
+			white-space: nowrap;
+		}
+	}
+
+	&__arrow {
+		display: grid;
+		place-items: center;
+		width: 3rem;
+		height: 3rem;
+		font-size: 1.1rem;
+		border: 1px solid var(--color-ink);
+		border-radius: 50%;
+		cursor: pointer;
+		transition: background .4s $easing-outQuint, color .4s $easing-outQuint, opacity .4s;
+
+		&:hover {
+			color: var(--color-shell);
+			background: var(--color-ink);
+		}
+
+		&:disabled {
+			opacity: 0.25;
+			pointer-events: none;
+		}
+	}
+
+	// Starts at the container edge and runs off the right side of the viewport
+	&__track {
+		display: flex;
+		gap: 4rem;
+		margin-top: 5.0625rem;
+		padding-inline: max(var(--grid-gutter), calc((100% - var(--grid-max-width)) / 2));
+		overflow-x: auto;
+		scroll-snap-type: x mandatory;
+		scroll-padding-inline: max(var(--grid-gutter), calc((100% - var(--grid-max-width)) / 2));
+		scrollbar-width: none;
+		overscroll-behavior-x: contain;
+
+		&::-webkit-scrollbar {
+			display: none;
+		}
+	}
+
+	&__card {
+		flex: 0 0 29rem;
+		scroll-snap-align: start;
+
+		img {
+			display: block;
+			width: 100%;
+			aspect-ratio: 4 / 5;
+			object-fit: cover;
+		}
+	}
+
+	&__num {
+		margin-top: 1.75rem;
+		opacity: 0.6;
+	}
+
+	&__title {
+		margin-top: 0.75rem;
+		font-size: 2.25rem;
+		line-height: 2.5rem;
+	}
+
+	&__text {
+		margin-top: 1rem;
+		font-size: 1.1rem;
+		line-height: 1.625rem;
+	}
+
+	@media (width < theme(--breakpoint-xl)) {
+		&__track {
+			gap: 1.25rem;
+			margin-top: 2.5rem;
+		}
+
+		&__card {
+			flex-basis: min(78vw, 22rem);
+		}
+
+		&__title {
+			font-size: 1.625rem;
+			line-height: 1.15;
+		}
+
+		&__text {
+			font-size: 0.95rem;
+			line-height: 1.45;
+		}
+	}
+
+	// On touch screens swiping is enough
+	@media (hover: none) {
+		&__arrow {
+			display: none;
+		}
+	}
+}
+
+// Uitklap
+.b-tp-uitklap {
+	&__heading {
+		grid-column: 1 / span 3;
+	}
+
+	&__list {
+		grid-column: 5 / span 8;
+		border-bottom: 1px solid var(--color-ink);
+	}
+
+	&__item {
+		border-top: 1px solid var(--color-ink);
+
+		// Smooth open and close where the browser supports it
+		interpolate-size: allow-keywords;
+
+		&::details-content {
+			height: 0;
+			overflow: clip;
+			transition: height .7s $easing-outQuint, content-visibility .7s allow-discrete;
+		}
+
+		&[open]::details-content {
+			height: auto;
+		}
+	}
+
+	&__summary {
+		display: flex;
+		align-items: center;
+		gap: 2rem;
+		padding-block: 1.75rem;
+		cursor: pointer;
+		list-style: none;
+
+		&::-webkit-details-marker {
+			display: none;
+		}
+
+		.b-proto-caption {
+			opacity: 0.6;
+		}
+	}
+
+	&__title {
+		font-family: var(--font-display);
+		font-size: 3rem;
+		line-height: 3.25rem;
+	}
+
+	// Plus that turns into a minus
+	&__icon {
+		position: relative;
+		width: 1.25rem;
+		height: 1.25rem;
+		margin-left: auto;
+		flex-shrink: 0;
+
+		&::before,
+		&::after {
+			content: '';
+			position: absolute;
+			top: 50%;
+			left: 0;
+			width: 100%;
+			height: 1.5px;
+			background: currentColor;
+			transition: transform .5s $easing-outQuint;
+		}
+
+		&::after {
+			transform: rotate(90deg);
+		}
+	}
+
+	&__item[open] &__icon::after {
+		transform: rotate(0deg);
+	}
+
+	&__body {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		gap: 4rem;
+		align-items: end;
+		padding-bottom: 2.5rem;
+
+		img {
+			width: 100%;
+			aspect-ratio: 4 / 3;
+			object-fit: cover;
+		}
+
+		p {
+			max-width: 26rem;
+			font-size: 1.1rem;
+			line-height: 1.625rem;
+		}
+	}
+
+	@media (width < theme(--breakpoint-xl)) {
+		&__heading,
+		&__list {
+			grid-column: 1 / -1;
+		}
+
+		&__summary {
+			gap: 1rem;
+			padding-block: 1.25rem;
+		}
+
+		&__title {
+			font-size: 1.625rem;
+			line-height: 1.15;
+		}
+	}
+
+	@media (width < theme(--breakpoint-md)) {
+		&__body {
+			grid-template-columns: 1fr;
+			gap: 1rem;
+			padding-bottom: 1.75rem;
+		}
+	}
+}
