@@ -63,15 +63,19 @@ Template `page-templates/realisaties.php`, set it on the page with slug `realisa
 
 How the photo wall works:
 
-- Photos are listed in the template as `image`, `ratio` (for example `4/5`), `alt` and
-  an optional `caption`. The ratio sets the crop.
-- Each photo goes to the shortest of 3 columns, so the columns stay balanced.
-- Width, alignment and space above each photo come from short lists that repeat.
-  The lists have different lengths, so the result looks random but is the same on
-  every visit. Change the lists at the top of `wall.php` to change the feel.
-- Under 768px the wall becomes 2 columns and the order of the photos changes.
+- Photos are listed in the template as `image`, `ratio` (for example `4/5`), `alt`,
+  an optional `caption` and an optional `feature`. The ratio sets the crop.
+- The wall is built from rows on the 12 column grid. Six row layouts take turns, see
+  `$layouts` at the top of `wall.php`: pairs with their tops or bottoms on one line,
+  single photos, and pairs where one photo drops lower.
+- Only the dropped photos move on scroll, so the aligned rows keep their lines.
+- A row with one photo always shows a portrait. The next portrait in the list moves
+  forward, or the photo is cropped to 4:5 when no portrait is left.
+- A photo with `'feature' => true` gets its own row as a large portrait that runs off
+  the edge of the screen, right and left in turn. Use it once or twice.
+- Under 640px the rows stack in one column. The second photo of a pair is 80% wide.
 - `assets/js/wall.js` reveals each photo when it scrolls into view and moves the
-  columns at different speeds. Both are off when the visitor prefers reduced motion.
+  dropped photos. Both are off when the visitor prefers reduced motion.
 
 The photos are placeholders: the design photos, reused with other crops.
 
