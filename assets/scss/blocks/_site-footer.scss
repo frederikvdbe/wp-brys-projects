@@ -1,0 +1,112 @@
+// Site footer: logo, lead and email on the left, three link columns on the right
+.b-site-footer {
+	overflow: hidden;
+	background: var(--color-ink);
+	color: var(--color-paper);
+
+	a {
+		transition: color .4s $easing-outQuint;
+
+		&:hover {
+			color: var(--color-sage);
+		}
+	}
+
+	&__top {
+		align-items: start;
+		padding-top: 9rem;
+	}
+
+	&__intro {
+		grid-column: 1 / span 5;
+	}
+
+	&__logo {
+		width: 5.5rem;
+		margin-bottom: 2.5rem;
+	}
+
+	&__lead {
+		max-width: 26rem;
+		font-family: $font-family-display;
+		font-size: 2rem;
+		line-height: 1.2;
+	}
+
+	&__mail {
+		display: inline-block;
+		margin-top: 2.5rem;
+		padding-bottom: 0.4rem;
+		font-family: $font-family-display;
+		font-style: italic;
+		font-size: 1.35rem;
+		border-bottom: 1px solid var(--color-rule);
+	}
+
+	&__col {
+		grid-column: span 2;
+
+		&:nth-child(2) {
+			grid-column: 6 / span 2;
+		}
+
+		&:nth-child(4) {
+			grid-column: span 3;
+		}
+
+		.c-eyebrow {
+			margin-bottom: 1.25rem;
+			color: inherit;
+			opacity: 0.6;
+		}
+
+		li + li {
+			margin-top: 0.6rem;
+		}
+	}
+
+	&__legal {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: space-between;
+		gap: 1rem 2rem;
+		margin-top: 8rem;
+		padding-block: 1.5rem 2rem;
+		font-size: 0.85rem;
+		line-height: 1.25rem;
+		border-top: 1px solid var(--color-rule);
+		opacity: 0.7;
+	}
+
+	&__legal-links {
+		display: flex;
+		gap: 1.5rem;
+	}
+
+	@media (width < theme(--breakpoint-xl)) {
+		@apply mt-24;
+	}
+
+	@media (width < theme(--breakpoint-lg)) {
+		&__top {
+			padding-top: 5rem;
+			row-gap: 3rem;
+		}
+
+		&__intro,
+		&__col,
+		&__col:nth-child(2),
+		&__col:nth-child(4) {
+			grid-column: 1 / -1;
+		}
+
+		&__lead {
+			font-size: 1.6rem;
+		}
+
+		&__legal {
+			flex-direction: column;
+			margin-top: 4rem;
+		}
+	}
+}

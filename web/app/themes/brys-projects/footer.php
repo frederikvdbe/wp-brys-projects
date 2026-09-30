@@ -1,36 +1,40 @@
 </main>
 
-<?php if ( ! get_query_var( 'hide_site_footer' ) ) get_template_part( 'partials/blocks/footer', null, array(
-	'address'  => array(
-		'Louis Delebecquelaan 34',
-		'9051 Sint-Denijs-Westrem',
-		'<a href="mailto:sales@brys-projects.be">sales@brys-projects.be</a>',
-	),
-	'columns'  => array(
+<?php if ( ! get_query_var( 'hide_site_footer' ) ) get_template_part( 'partials/blocks/site-footer', null, array(
+	'lead'    => 'Binnenafwerking, badkamers en microcement. Met één ploeg, van plan tot oplevering.',
+	'email'   => 'sales@brys-projects.be',
+	'columns' => array(
 		array(
-			'title' => 'Onze diensten',
+			'title' => 'Diensten',
 			'items' => array(
 				array( 'label' => 'Binnenafwerking', 'url' => '/diensten/binnenhuisafwerking' ),
 				array( 'label' => 'Badkamers', 'url' => '/diensten/badkamers' ),
-				array( 'label' => 'Microcement', 'url' => '/diensten/microcement' ),
+				array( 'label' => 'Microcement', 'url' => '/microcement' ),
 			),
 		),
 		array(
-			'title' => 'Onze projecten',
+			'title' => 'Brys',
 			'items' => array(
-				array( 'label' => 'Binnenafwerking', 'url' => '/projecten/binnenhuisafwerking' ),
-				array( 'label' => 'Badkamers', 'url' => '/projecten/badkamers' ),
-				array( 'label' => 'Microcement', 'url' => '/projecten/microcement' ),
+				array( 'label' => 'Realisaties', 'url' => '/realisaties' ),
+				array( 'label' => 'Werkwijze', 'url' => '/werkwijze' ),
+				array( 'label' => 'Over ons', 'url' => '/over-ons' ),
+				array( 'label' => 'Contact', 'url' => '/contact' ),
+			),
+		),
+		array(
+			'title' => 'Bezoek',
+			'items' => array(
+				'Louis Delebecquelaan 34',
+				'9051 Sint-Denijs-Westrem',
 			),
 		),
 	),
-	'copyright' => '&copy; Brys Projects &nbsp;&mdash;&nbsp; Alle rechten voorbehouden',
-	'legal'     => array(
+	'legal'   => array(
 		array( 'label' => 'Privacybeleid', 'url' => '/privacy-policy' ),
 		array( 'label' => 'Cookiebeleid', 'url' => '/cookie-policy' ),
 		array( 'label' => 'Disclaimer', 'url' => '/disclaimer' ),
 	),
-	'credits'   => array( 'label' => 'Website door frederikvd.be', 'url' => 'https://frederikvd.be' ),
+	'credits' => array( 'label' => 'Website door frederikvd.be', 'url' => 'https://frederikvd.be' ),
 ) ); ?>
 
 <?php get_template_part( 'partials/components/menu' ); ?>
