@@ -6,26 +6,27 @@
 get_header();
 
 $tiles = array(
-	array( 'image' => 'hero.jpg', 'ratio' => '4/5', 'alt' => 'Keuken met microcementafwerking', 'caption' => 'Keuken · Gent' ),
-	array( 'image' => 'toepassingen.jpg', 'ratio' => '4/3', 'alt' => 'Detail van een afgewerkt meubel' ),
-	array( 'image' => 'realisatie-badkamers.jpg', 'ratio' => '2/3', 'alt' => 'Badkamer in natuursteen', 'caption' => 'Badkamer · Sint-Martens-Latem' ),
-	array( 'image' => 'detail-groot.jpg', 'ratio' => '3/4', 'alt' => 'Badkamer in travertin' ),
-	array( 'image' => 'realisatie-microcement.jpg', 'ratio' => '1/1', 'alt' => 'Eettafel in microcement', 'caption' => 'Tafel · Deinze' ),
-	array( 'image' => 'detail-groot.jpg', 'ratio' => '4/5', 'alt' => 'Badkamer in travertin', 'caption' => 'Badkamer · Gavere', 'feature' => true ),
-	array( 'image' => 'realisatie-binnenafwerking.jpg', 'ratio' => '4/5', 'alt' => 'Slaapkamer met maatwerk kasten', 'caption' => 'Slaapkamer · Gent' ),
-	array( 'image' => 'hero.jpg', 'ratio' => '3/2', 'alt' => 'Keuken met microcementafwerking' ),
-	array( 'image' => 'detail-groot.jpg', 'ratio' => '5/7', 'alt' => 'Badkamer in travertin', 'caption' => 'Badkamer · Merelbeke' ),
-	array( 'image' => 'realisatie-microcement.jpg', 'ratio' => '4/5', 'alt' => 'Eettafel in microcement' ),
-	array( 'image' => 'toepassingen.jpg', 'ratio' => '1/1', 'alt' => 'Detail van een afgewerkt meubel', 'caption' => 'Detail' ),
-	array( 'image' => 'realisatie-badkamers.jpg', 'ratio' => '3/4', 'alt' => 'Badkamer in natuursteen' ),
-	array( 'image' => 'detail-zwembad.jpg', 'ratio' => '2/3', 'alt' => 'Binnenzwembad met betonnen balken', 'caption' => 'Zwembad · Oudenaarde' ),
-	array( 'image' => 'realisatie-binnenafwerking.jpg', 'ratio' => '4/3', 'alt' => 'Slaapkamer met maatwerk kasten' ),
-	array( 'image' => 'hero.jpg', 'ratio' => '4/5', 'alt' => 'Keuken met microcementafwerking', 'caption' => 'Keuken · Sint-Martens-Latem', 'feature' => true ),
-	array( 'image' => 'detail-groot.jpg', 'ratio' => '1/1', 'alt' => 'Badkamer in travertin' ),
+	array( 'image' => 'keuken-open-rekken.jpg', 'ratio' => '4/5', 'alt' => 'Keuken met open rekken en zwarte tegels', 'caption' => 'Keuken' ),
+	array( 'image' => 'badkamer-dubbele-wastafel.jpg', 'ratio' => '4/3', 'alt' => 'Badkamer met twee stenen waskommen' ),
+	array( 'image' => 'trap-microcement.jpg', 'ratio' => '2/3', 'alt' => 'Trap in microcement', 'caption' => 'Trap' ),
+	array( 'image' => 'wastafel-natuursteen.jpg', 'ratio' => '3/4', 'alt' => 'Stenen waskom op een houten blad' ),
+	array( 'image' => 'bad-bovenaanzicht.jpg', 'ratio' => '1/1', 'alt' => 'Vrijstaand bad van bovenaf', 'caption' => 'Badkamer' ),
+	array( 'image' => 'eetkamer-tafel.jpg', 'ratio' => '4/5', 'alt' => 'Eetkamer met houten tafel en travertin vloer', 'caption' => 'Eetkamer', 'feature' => true ),
+	array( 'image' => 'douche-messing.jpg', 'ratio' => '4/5', 'alt' => 'Douche met messing kraan', 'caption' => 'Douche' ),
+	array( 'image' => 'nis-microcement.jpg', 'ratio' => '3/2', 'alt' => 'Nissen in een wand van microcement' ),
+	array( 'image' => 'woning-buitenzijde.jpg', 'ratio' => '2/3', 'alt' => 'Buitenzijde van een gerenoveerde woning', 'caption' => 'Woning' ),
+	array( 'image' => 'inkom-kruiken.jpg', 'ratio' => '4/5', 'alt' => 'Inkom met stenen kruiken' ),
+	array( 'image' => 'wand-microcement-rond.jpg', 'ratio' => '1/1', 'alt' => 'Afgeronde wand in microcement', 'caption' => 'Wand' ),
+	array( 'image' => 'badkamer-bad-travertin.jpg', 'ratio' => '3/4', 'alt' => 'Vrijstaand bad op een travertin vloer' ),
+	array( 'image' => 'douche-microcement.jpg', 'ratio' => '2/3', 'alt' => 'Inloopdouche in microcement', 'caption' => 'Douche' ),
+	array( 'image' => 'inkom-trap.jpg', 'ratio' => '4/3', 'alt' => 'Inkom met trap en kapstok' ),
+	array( 'image' => 'badkamer-open-trap.jpg', 'ratio' => '4/5', 'alt' => 'Badkamer in microcement met open trap', 'caption' => 'Badkamer', 'feature' => true ),
+	array( 'image' => 'wastafel-spiegel.jpg', 'ratio' => '1/1', 'alt' => 'Badkamer met stenen waskom en spiegel' ),
 );
 ?>
 
 <?php get_template_part( 'partials/blocks/page-intro', null, array(
+	'classes' => 'b-page-intro--narrow',
 	'title'   => 'Elke ruimte,<br>haar eigen karakter',
 ) ); ?>
 

@@ -13,8 +13,8 @@ get_header();
 
 <?php get_template_part( 'partials/blocks/figure', null, array(
 	'classes'   => 'mt-[5rem]',
-	'image'     => 'detail-groot.jpg',
-	'image_alt' => 'Badkamer in travertin',
+	'image'     => 'wastafel-natuursteen.jpg',
+	'image_alt' => 'Stenen waskom op een houten blad',
 	'align'     => 'right',
 	'overhang'  => true,
 ) ); ?>

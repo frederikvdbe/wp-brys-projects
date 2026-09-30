@@ -10,8 +10,8 @@ get_header();
 	'title'     => 'Meesterschap<br>in afwerking',
 	'text'      => 'Het evenwicht tussen ruwe kracht en verfijnd detail. Wij werken vanuit vakmanschap en met oog voor ontwerp. Zo worden muren, vloeren en meubels één geheel met karakter.',
 	'link'      => array( 'label' => 'Ontdek onze realisaties', 'url' => '/realisaties' ),
-	'image'     => 'hero.jpg',
-	'image_alt' => 'Keuken met microcementafwerking',
+	'image'     => 'keuken-open-rekken.jpg',
+	'image_alt' => 'Keuken met open rekken en zwarte tegels',
 ) ); ?>
 
 <?php // Lighter panel that runs from the scroll hint down to halfway the detail block ?>
@@ -34,20 +34,20 @@ get_header();
 			array(
 				'label'     => 'Badkamers',
 				'url'       => '/realisaties/badkamers',
-				'image'     => 'realisatie-badkamers.jpg',
-				'image_alt' => 'Badkamer in natuursteen',
+				'image'     => 'wastafel-spiegel.jpg',
+				'image_alt' => 'Badkamer met stenen waskom op een houten blad',
 			),
 			array(
 				'label'     => 'Binnenafwerking',
 				'url'       => '/realisaties/binnenafwerking',
-				'image'     => 'realisatie-binnenafwerking.jpg',
-				'image_alt' => 'Slaapkamer met maatwerk kasten',
+				'image'     => 'eetkamer-tafel.jpg',
+				'image_alt' => 'Eetkamer met houten tafel en travertin vloer',
 			),
 			array(
 				'label'     => 'Microcement',
 				'url'       => '/realisaties/microcement',
-				'image'     => 'realisatie-microcement.jpg',
-				'image_alt' => 'Eettafel in microcement',
+				'image'     => 'douche-microcement.jpg',
+				'image_alt' => 'Inloopdouche in microcement',
 			),
 		),
 	) ); ?>
@@ -76,8 +76,8 @@ get_header();
 
 	<?php get_template_part( 'partials/blocks/detail', null, array(
 		'classes'     => 'mt-[13.25rem]',
-		'image_large' => array( 'file' => 'detail-groot.jpg', 'alt' => 'Badkamer in travertin' ),
-		'image_small' => array( 'file' => 'detail-zwembad.jpg', 'alt' => 'Binnenzwembad met betonnen balken' ),
+		'image_large' => array( 'file' => 'badkamer-dubbele-wastafel.jpg', 'alt' => 'Badkamer met twee stenen waskommen' ),
+		'image_small' => array( 'file' => 'bad-bovenaanzicht.jpg', 'alt' => 'Vrijstaand bad van bovenaf' ),
 		'text'        => 'Een bijzonder pand verdient een afwerking die klopt. Wij nemen u de werken volledig uit handen, tegen een vaste prijs. U kiest, wij voeren uit.',
 		'link'        => array( 'label' => 'Bekijk onze werkwijze', 'url' => '/werkwijze' ),
 	) ); ?>
@@ -86,11 +86,12 @@ get_header();
 
 <?php get_template_part( 'partials/blocks/toepassingen', null, array(
 	'classes'   => 'mt-[12.8125rem]',
-	'title'     => 'Eén materiaal, elke vorm',
+	'title'     => 'Eén materiaal,<br>elke vorm',
 	'text'      => 'Van inloopdouche tot keukeneiland, van trap tot tafel. Microcement volgt elke lijn van de ruimte, zonder voeg of drempel.',
 	'link'      => array( 'label' => 'Ontdek microcement', 'url' => '/microcement' ),
-	'image'     => 'toepassingen.jpg',
-	'image_alt' => 'Detail van een afgewerkt meubel',
+	'image'     => 'vloer-travertin-detail.jpg',
+	'image_alt' => 'Vloer in smalle tegels die overgaat in travertin, naast een afgeronde wand',
+	'image_position' => 'object-top',
 ) ); ?>
 
 <?php get_footer(); ?>

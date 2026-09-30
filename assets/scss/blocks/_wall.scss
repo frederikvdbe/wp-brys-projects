@@ -45,10 +45,11 @@
 		}
 	}
 
+	// Starts at page column 9, the photo under it at column 6
 	&__intro {
-		grid-column: 1 / span 3;
+		grid-column: 4 / span 3;
 		margin-top: -0.375rem; // the line height adds space above the first line
-		margin-bottom: calc(12.875rem * var(--gap-scale)); // same as the space between the first photo and the text
+		margin-bottom: calc(12.875rem * var(--gap-scale));
 	}
 
 	&__image {
@@ -150,11 +151,22 @@
 @media (width >= theme(--breakpoint-xl)) {
 	.b-page-intro--narrow {
 		.b-page-intro__title {
-			grid-column: 2 / span 7;
+			grid-column: 2 / span 8;
 		}
 
 		.b-page-intro__text {
 			grid-column: 9 / span 3;
+		}
+	}
+}
+
+// Page intro variant: the text sits under the title, from column 3
+@media (width >= theme(--breakpoint-xl)) {
+	.b-page-intro--stacked {
+		.b-page-intro__text {
+			grid-column: 3 / span 3;
+			grid-row: 2;
+			align-self: start;
 		}
 	}
 }

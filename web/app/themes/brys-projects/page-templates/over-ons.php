@@ -7,15 +7,15 @@ get_header();
 ?>
 
 <?php get_template_part( 'partials/blocks/page-intro', null, array(
-	'classes' => 'b-page-intro--narrow',
-	'title'   => 'Wie<br>wij zijn',
+	'classes' => 'b-page-intro--narrow b-page-intro--stacked',
+	'title'   => 'Wie wij zijn',
 	'text'    => 'Brys Projects is een afwerkingsbedrijf uit Sint-Denijs-Westrem. Wij zijn gespecialiseerd in binnenafwerking, badkamers en microcement.',
 ) ); ?>
 
 <?php get_template_part( 'partials/blocks/figure', null, array(
 	'classes'   => 'mt-[5rem]',
-	'image'     => 'hero.jpg',
-	'image_alt' => 'Keuken met microcementafwerking',
+	'image'     => 'ploeg-vloer.jpg',
+	'image_alt' => 'Onze ploeg legt een houten vloer',
 	'align'     => 'center',
 	'overhang'  => true,
 ) ); ?>
@@ -39,17 +39,17 @@ get_header();
 			array(
 				'title' => 'Particulieren',
 				'text'  => 'U renoveert of bouwt en wilt één partij voor de afwerking. Wij denken mee over materiaal en kleur. Daarna voeren wij alles uit, tot de oplevering.',
-				'image' => 'realisatie-badkamers.jpg',
+				'image' => 'badkamer-dubbele-wastafel.jpg',
 			),
 			array(
 				'title' => 'Architecten',
 				'text'  => 'U tekent het ontwerp, wij voeren het uit tot in het detail. Wij volgen uw plannen en overleggen bij elke keuze op de werf.',
-				'image' => 'detail-groot.jpg',
+				'image' => 'inkom-kruiken.jpg',
 			),
 			array(
 				'title' => 'Interieurontwerpers',
 				'text'  => 'U zoekt een partner voor maatwerk en bijzondere afwerkingen. Wij maken stalen op maat. Zo kunt u kleur en textuur tonen aan uw klant.',
-				'image' => 'realisatie-microcement.jpg',
+				'image' => 'nis-microcement.jpg',
 			),
 		),
 	) ); ?>
@@ -62,20 +62,20 @@ get_header();
 			array(
 				'label'     => 'Badkamers',
 				'url'       => '/realisaties/badkamers',
-				'image'     => 'realisatie-badkamers.jpg',
-				'image_alt' => 'Badkamer in natuursteen',
+				'image'     => 'douche-messing.jpg',
+				'image_alt' => 'Douche met messing kraan',
 			),
 			array(
 				'label'     => 'Binnenafwerking',
 				'url'       => '/realisaties/binnenafwerking',
-				'image'     => 'realisatie-binnenafwerking.jpg',
-				'image_alt' => 'Slaapkamer met maatwerk kasten',
+				'image'     => 'inkom-trap.jpg',
+				'image_alt' => 'Inkom met trap en kapstok',
 			),
 			array(
 				'label'     => 'Microcement',
 				'url'       => '/realisaties/microcement',
-				'image'     => 'realisatie-microcement.jpg',
-				'image_alt' => 'Eettafel in microcement',
+				'image'     => 'trap-microcement.jpg',
+				'image_alt' => 'Trap in microcement',
 			),
 		),
 	) ); ?>

@@ -10,9 +10,9 @@ get_header();
 	'title'     => 'Naadloos<br>van vloer tot wand',
 	'text'      => 'Microcement is een minerale afwerking van meestal twee tot drie millimeter dik. Wij brengen het met de hand aan op vloeren, wanden, trappen en meubels. Het resultaat is één doorlopend oppervlak, zonder voegen.',
 	'link'      => array( 'label' => 'Bekijk onze realisaties', 'url' => '/realisaties' ),
-	'image'     => 'toepassingen.jpg',
-	'image_alt' => 'Detail van een meubel afgewerkt in microcement',
-	'image_small' => array( 'file' => 'detail-zwembad.jpg', 'alt' => 'Binnenzwembad met betonnen balken' ),
+	'image'     => 'wand-microcement-rond.jpg',
+	'image_alt' => 'Afgeronde wand in microcement',
+	'image_small' => array( 'file' => 'badkamer-open-trap.jpg', 'alt' => 'Badkamer in microcement met open trap' ),
 ) ); ?>
 
 <div class="c-panel c-panel--left" style="--panel-inset-bottom: 0">
@@ -35,32 +35,32 @@ get_header();
 			array(
 				'title' => 'Vloeren',
 				'text'  => 'Eén doorlopende vloer door de hele verdieping, zonder drempels of voegen. Geschikt voor vloerverwarming.',
-				'image' => 'toepassingen.jpg',
+				'image' => 'badkamer-open-trap.jpg',
 			),
 			array(
 				'title' => 'Badkamer en douche',
 				'text'  => 'Wanden, vloer en inloopdouche in één materiaal. Zonder voegen zetten vuil en kalk zich minder snel vast.',
-				'image' => 'realisatie-badkamers.jpg',
+				'image' => 'douche-microcement.jpg',
 			),
 			array(
 				'title' => 'Keuken',
 				'text'  => 'Werkbladen, spatwanden en eilanden. Vlekwerend dankzij de afwerklaag en bestand tegen normale keukenwarmte. Hete potten zet u op een onderlegger.',
-				'image' => 'hero.jpg',
+				'image' => 'keuken-open-rekken.jpg',
 			),
 			array(
 				'title' => 'Wanden',
 				'text'  => 'Een zachte, minerale textuur, van woonkamer tot inkomhal. Ook op gyproc en bestaande pleister.',
-				'image' => 'realisatie-binnenafwerking.jpg',
+				'image' => 'wand-microcement-rond.jpg',
 			),
 			array(
 				'title' => 'Trappen',
 				'text'  => 'Treden en stootborden in hetzelfde materiaal als de vloer. Zo vormt de trap één geheel met de ruimte.',
-				'image' => 'detail-groot.jpg',
+				'image' => 'trap-microcement.jpg',
 			),
 			array(
 				'title' => 'Meubels en maatwerk',
 				'text'  => 'Tafels, banken, wastafels en kasten. Wij werken ook bestaande meubels opnieuw af.',
-				'image' => 'realisatie-microcement.jpg',
+				'image' => 'nis-microcement.jpg',
 			),
 		),
 	) ); ?>
