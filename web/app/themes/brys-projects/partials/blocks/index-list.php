@@ -5,14 +5,18 @@
  * @var array  $args
  * @var string $title
  * @var array  $items    array( 'title' => string, 'text' => string )
+ * @var bool   $narrow   Optional, use 10 columns with a 1 column offset
  * @var string $classes
  */
 extract( $args );
 $classes = $classes ?? '';
+$narrow  = $narrow ?? false;
 ?>
 
 <section class="b-index <?= $classes; ?>">
 	<div class="o-container">
+
+		<?php if ( $narrow ) : ?><div class="o-grid"><div class="b-index__narrow"><?php endif; ?>
 
 		<h2 class="text-[2.7125rem] leading-[2.625rem]" data-reveal="lines"><?= $title; ?></h2>
 
@@ -24,6 +28,8 @@ $classes = $classes ?? '';
 				</li>
 			<?php endforeach; ?>
 		</ul>
+
+		<?php if ( $narrow ) : ?></div></div><?php endif; ?>
 
 	</div>
 </section>

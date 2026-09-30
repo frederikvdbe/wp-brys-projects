@@ -29,6 +29,7 @@ get_header();
 
 	<?php get_template_part( 'partials/blocks/index-list', null, array(
 		'classes' => 'mt-[16rem]',
+		'narrow'  => true,
 		'title'   => 'Toepassingen',
 		'items'   => array(
 			array(

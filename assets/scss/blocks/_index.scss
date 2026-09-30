@@ -1,3 +1,41 @@
+// Narrow version: 10 columns with a 1 column offset. The rows follow the page
+// grid, so the text column stays in the same place as in the wide version.
+@media (width >= theme(--breakpoint-lg)) {
+	.b-index__narrow {
+		display: grid;
+		grid-template-columns: subgrid;
+		grid-column: 2 / span 10;
+
+		> * {
+			grid-column: 1 / -1;
+		}
+
+		.b-index__list {
+			display: grid;
+			grid-template-columns: subgrid;
+		}
+
+		.b-index__row {
+			grid-column: 1 / -1;
+			grid-template-columns: subgrid;
+		}
+
+		.b-index__title {
+			grid-column: 1 / span 6;
+		}
+
+		.b-index__title + p {
+			grid-column: 7 / span 4;
+		}
+	}
+}
+
+@media (width < theme(--breakpoint-lg)) {
+	.b-index__narrow {
+		grid-column: 1 / -1;
+	}
+}
+
 @media (width < theme(--breakpoint-xl)) {
 	.b-index {
 		@apply mt-32;
