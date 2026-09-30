@@ -26,8 +26,8 @@ $tiles = array(
 ?>
 
 <?php get_template_part( 'partials/blocks/page-intro', null, array(
-	'eyebrow' => 'Realisaties',
-	'count'   => count( $tiles ),
+	'classes' => 'b-page-intro--offset',
+	'spacing' => 'pt-[7.5rem]',
 	'title'   => 'Elke ruimte,<br>haar eigen karakter',
 	'text'    => 'Een greep uit ons werk. Badkamers, vloeren, keukens en meubels, met de hand afgewerkt in microcement en natuurlijke materialen.',
 ) ); ?>

@@ -1,21 +1,24 @@
 <?php
 /**
  * Page title on the left, intro text on the right. The label and count above the
- * title are optional.
+ * title are optional. With the offset class the text starts one column further
+ * left, under the title.
  *
  * @var array  $args
  * @var string $eyebrow  Optional
  * @var int    $count    Optional
  * @var string $title
  * @var string $text
+ * @var string $spacing  Optional top padding class, default pt-[11.5rem]
  * @var string $classes
  */
 extract( $args );
 $classes = $classes ?? '';
+$spacing = $spacing ?? 'pt-[11.5rem]';
 ?>
 
 <section class="b-page-intro <?= $classes; ?>">
-	<div class="o-container o-grid pt-[11.5rem]">
+	<div class="o-container o-grid <?= $spacing; ?>">
 
 		<div class="sm:col-span-8">
 			<?php if ( ! empty( $eyebrow ) ) : ?>
@@ -29,7 +32,7 @@ $classes = $classes ?? '';
 			<h1 class="text-[7.125rem] leading-[7.875rem]" data-reveal="lines"><?= $title; ?></h1>
 		</div>
 
-		<div class="sm:col-span-3 sm:col-start-10 self-end">
+		<div class="b-page-intro__text sm:col-span-3 sm:col-start-10 self-end">
 			<p data-reveal="fade"><?= $text; ?></p>
 		</div>
 

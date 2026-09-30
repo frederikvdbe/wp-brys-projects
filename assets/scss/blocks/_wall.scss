@@ -113,3 +113,19 @@
 		@apply pt-32;
 	}
 }
+
+// Page intro variant: the text starts one column further left, with its top level
+// with the bottom of the title
+@media (width >= theme(--breakpoint-xl)) {
+	.b-page-intro--offset {
+		> .o-container {
+			row-gap: 0;
+		}
+
+		.b-page-intro__text {
+			grid-column: 9 / span 3;
+			grid-row: 2;
+			align-self: start;
+		}
+	}
+}

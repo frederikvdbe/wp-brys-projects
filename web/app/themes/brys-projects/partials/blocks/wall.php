@@ -10,9 +10,10 @@ extract( $args );
 $classes = $classes ?? '';
 
 // Row layouts, used in turn. Each slot is a grid column start and span, with an
-// optional drop in rem. Drop slots also move a little on scroll.
+// optional drop in rem. Drop slots also move a little on scroll. The first row
+// starts with a narrow photo and a wide one lower down.
 $layouts = array(
-	array( 'align' => 'start', 'slots' => array( array( 1, 7 ), array( 9, 4 ) ) ),
+	array( 'align' => 'start', 'slots' => array( array( 1, 4 ), array( 6, 7, 7 ) ) ),
 	array( 'align' => 'start', 'slots' => array( array( 5, 5 ) ) ),
 	array( 'align' => 'start', 'slots' => array( array( 2, 4 ), array( 7, 6, 14 ) ) ),
 	array( 'align' => 'end', 'slots' => array( array( 1, 5 ), array( 7, 5 ) ) ),
