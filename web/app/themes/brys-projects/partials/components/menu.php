@@ -1,7 +1,8 @@
 <?php
 /**
  * Full screen menu overlay, opened by the Menu button in the site header.
- * The animation lives in assets/js/menu.js.
+ * The animation lives in assets/js/menu.js. The item of the current page, or of a
+ * page below it, is marked as current.
  */
 $items = array(
 	array( 'label' => 'Microcement', 'url' => '/microcement' ),
@@ -10,6 +11,8 @@ $items = array(
 	array( 'label' => 'Over ons', 'url' => '/over-ons' ),
 	array( 'label' => 'Contact', 'url' => '/contact' ),
 );
+
+$path = '/' . trim( parse_url( $_SERVER['REQUEST_URI'] ?? '', PHP_URL_PATH ), '/' );
 ?>
 <div class="c-menu js-menu" id="site-menu" aria-hidden="true" inert>
 	<div class="c-menu__backdrop js-menu-close"></div>
@@ -27,8 +30,9 @@ $items = array(
 
 		<ul class="c-menu__list">
 			<?php foreach ( $items as $item ) : ?>
+				<?php $current = $path === $item['url'] || str_starts_with( $path, $item['url'] . '/' ); ?>
 				<li class="c-menu__item">
-					<a href="<?= esc_url( $item['url'] ); ?>" class="c-menu__link">
+					<a href="<?= esc_url( $item['url'] ); ?>" class="c-menu__link <?= $current ? 'is-current' : ''; ?>" <?= $current ? 'aria-current="page"' : ''; ?>>
 						<span class="c-menu__mask">
 							<span class="c-menu__label js-menu-label"><?= esc_html( $item['label'] ); ?></span>
 						</span>

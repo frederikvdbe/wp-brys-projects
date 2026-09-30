@@ -137,6 +137,18 @@
 			opacity: .32;
 		}
 
+		// Current page: sage italic label and the light rule drawn in full
+		&__link.is-current {
+			.c-menu__label {
+				font-style: italic;
+				color: var(--color-sage);
+			}
+
+			.c-menu__rule::after {
+				transform: scaleX(1);
+			}
+		}
+
 		&__link:hover,
 		&__link:focus-visible {
 			outline: none;
