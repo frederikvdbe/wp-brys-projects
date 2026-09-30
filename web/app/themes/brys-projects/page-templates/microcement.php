@@ -83,8 +83,6 @@ get_header();
 <?php get_template_part( 'partials/blocks/steps', null, array(
 	'classes' => 'mt-[14rem]',
 	'title'   => 'Van eerste bezoek<br>tot oplevering',
-	'text'    => 'Wij volgen uw project zelf op, van het eerste gesprek tot de laatste laag vernis.',
-	'link'    => array( 'label' => 'Lees de veelgestelde vragen', 'url' => '/veelgestelde-vragen' ),
 	'steps'   => array(
 		array(
 			'title' => 'Bezoek ter plaatse',

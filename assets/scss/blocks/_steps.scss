@@ -1,3 +1,43 @@
+// Olive accents: the step number, and an olive line that draws over the top rule
+// once the step has faded in
+.b-steps {
+	--steps-olive: #5A603C;
+
+	&__step {
+		position: relative;
+
+		&::before {
+			@apply absolute left-0 origin-left;
+
+			content: '';
+			top: -1px;
+			width: 4.5rem;
+			height: 3px;
+			background: var(--steps-olive);
+			transform: scaleX(0);
+			transition: transform 1.2s $easing-outQuint .4s;
+		}
+
+		&.is-revealed::before {
+			transform: scaleX(1);
+		}
+
+		@media (prefers-reduced-motion: reduce) {
+			&::before {
+				transform: none;
+			}
+		}
+	}
+
+	&__num {
+		font-family: $font-family-display;
+		font-style: italic;
+		font-size: 2.5rem;
+		line-height: 1;
+		color: var(--steps-olive);
+	}
+}
+
 // Five columns on desktop, two on tablet, one on a phone
 @media (width < theme(--breakpoint-xl)) {
 	.b-steps {
