@@ -18,8 +18,8 @@ get_header();
 <div class="c-panel">
 
 	<div class="o-container">
-		<p class="c-eyebrow pt-[2.75rem] pl-[0.9375rem] flex items-center gap-[0.5625rem]">
-			Verder
+		<p class="c-eyebrow pt-[2.75rem] pl-[0.9375rem] flex items-center gap-[0.5625rem]" data-scroll-hint=".b-realisaties h2">
+			Scroll
 			<span class="c-scroll-arrow">
 				<?php get_template_part( 'partials/vectors/arrow-diagonal.svg', null, array( 'size' => 9 ) ); ?>
 			</span>

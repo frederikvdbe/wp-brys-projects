@@ -1,10 +1,11 @@
 // The hero fills the viewport minus the header and a strip of the panel below,
-// so the scroll hint is always in view. The text is centred between the top of
-// the image and that strip. The image keeps its size, so how far it hangs into
-// the panel depends on the viewport height (--hero-overhang).
+// so the scroll hint is always in view. It never grows taller than in the
+// design. The text is centred between the top of the image and that strip.
+// The image keeps its size, so how far it hangs into the panel depends on the
+// viewport height (--hero-overhang).
 :root {
 	--hero-peek: 6.25rem;
-	--hero-height: calc(100svh - 8.0625rem - 1px - var(--hero-peek));
+	--hero-height: min(51.8125rem, calc(100svh - 8.0625rem - 1px - var(--hero-peek)));
 	--hero-overhang: calc(4.9375rem + 56.9375rem - var(--hero-height));
 }
 

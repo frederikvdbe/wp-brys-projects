@@ -16,6 +16,10 @@
 		line-height: 1rem;
 		letter-spacing: 0.1em;
 		color: rgb(53 41 29 / 0.7);
+
+		&.is-hidden {
+			visibility: hidden;
+		}
 	}
 
 	// Arrow next to the scroll hint. It slides out along its own direction and

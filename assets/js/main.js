@@ -6,6 +6,7 @@ if (import.meta.hot) {
 
 import './smooth-scroll.js';
 import './site-header.js';
+import './scroll-hint.js';
 import './menu.js';
 import './reveal.js';
 import './wall.js';
