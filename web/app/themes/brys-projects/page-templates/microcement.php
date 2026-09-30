@@ -68,7 +68,6 @@ get_header();
 		'classes' => 'mt-[16rem] pb-[14rem]',
 		'title'   => 'Kleur en textuur',
 		'text'    => 'Wij mengen elke kleur op maat, van kalkwit tot diep grafiet. Glad of met een zichtbare spaanslag. Bij het eerste bezoek brengen wij stalen mee. Zo ziet u de kleur in het licht van uw eigen ruimte.',
-		'link'    => array( 'label' => 'Vraag stalen aan', 'url' => '/contact' ),
 		'tones'   => array(
 			array( 'name' => 'Kalk', 'color' => '#E8E3D8' ),
 			array( 'name' => 'Zand', 'color' => '#D5CAB6' ),
