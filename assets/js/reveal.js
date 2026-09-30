@@ -17,14 +17,15 @@ const done = $el => {
 	$el.classList.add('is-revealed');
 };
 
-const fadeIn = $els => gsap.fromTo($els, { autoAlpha: 0, y: 28 }, {
+// CSS transitions are off during the fade, they would fight GSAP
+const fadeIn = $els => gsap.fromTo($els, { autoAlpha: 0, y: 28, transition: 'none' }, {
 	autoAlpha: 1,
 	y: 0,
 	duration: 1.2,
 	ease: 'power3.out',
 	stagger: 0.1,
 	onStart: () => $els.forEach(done),
-	clearProps: 'opacity,visibility,transform',
+	clearProps: 'opacity,visibility,transform,transition',
 });
 
 if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
