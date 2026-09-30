@@ -5,7 +5,7 @@
  * An optional small image sits under the text, level with the bottom of the big one.
  *
  * @var array        $args
- * @var string       $title     Heading, use <br> to force a line break
+ * @var string       $title     Heading, use <br> to force a line break. Each next line starts one column further in.
  * @var string|array $text      One paragraph, or a list of paragraphs
  * @var array        $link      Optional, array( 'label' => string, 'url' => string )
  * @var string       $image     Image file name inside assets/dist/images
@@ -20,16 +20,20 @@ $link      = $link ?? null;
 $image_small = $image_small ?? null;
 ?>
 
-<section class="b-showcase relative z-10 <?= $classes; ?>">
+<section class="b-showcase relative z-10 <?= $classes; ?>" data-reveal-sequence>
 	<div class="o-container o-grid pt-[7.5rem]">
 
-		<h1 class="sm:col-span-10 sm:col-start-2 text-[7.125rem] leading-[7.875rem]" data-reveal="lines"><?= $title; ?></h1>
+		<h1 class="b-showcase__title sm:col-span-10 sm:col-start-2 text-[7.125rem] leading-[7.875rem]">
+			<?php foreach ( explode( '<br>', $title ) as $index => $line ) : ?>
+				<span class="b-showcase__line" data-reveal="lines" data-reveal-delay="<?= $index * 0.08; ?>"><?= $line; ?></span>
+			<?php endforeach; ?>
+		</h1>
 
 	</div>
 
 	<div class="o-container o-grid mt-[5rem]">
 
-		<div class="b-showcase__image sm:col-span-8 h-[57.125rem] mb-[-10rem]" data-reveal="image">
+		<div class="b-showcase__image sm:col-span-8 h-[57.125rem] mb-[-10rem]" data-reveal="image" data-reveal-delay="0.3">
 			<img class="w-full h-full object-cover"
 				 src="<?= get_template_directory_uri(); ?>/assets/dist/images/<?= $image; ?>"
 				 width="1212" height="914" alt="<?= esc_attr( $image_alt ); ?>">

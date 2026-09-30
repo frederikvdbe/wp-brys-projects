@@ -7,7 +7,7 @@ get_header();
 ?>
 
 <?php get_template_part( 'partials/blocks/showcase', null, array(
-	'title'     => 'Naadloos van<br>vloer tot wand',
+	'title'     => 'Naadloos<br>van vloer tot wand',
 	'text'      => 'Microcement is een minerale afwerking van meestal twee tot drie millimeter dik. Wij brengen het met de hand aan op vloeren, wanden, trappen en meubels. Het resultaat is één doorlopend oppervlak, zonder voegen.',
 	'link'      => array( 'label' => 'Bekijk onze realisaties', 'url' => '/realisaties' ),
 	'image'     => 'toepassingen.jpg',

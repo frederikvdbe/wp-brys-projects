@@ -8,6 +8,7 @@ import { SplitText } from 'gsap/SplitText';
 // - image: on the wrapper, the image fades in and slowly zooms out over a dark background
 // In a section with data-reveal-sequence, a fade waits until the title of that
 // section has mostly landed and the fade itself has scrolled into view.
+// Lines and images take an optional data-reveal-delay in seconds.
 // _reveal.scss hides the elements until they play, the is-revealed class lifts that.
 gsap.registerPlugin(ScrollTrigger, SplitText);
 
@@ -54,6 +55,7 @@ if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
 						duration: 1.2,
 						ease: 'expo.out',
 						stagger: 0.08,
+						delay: parseFloat($el.dataset.revealDelay) || 0,
 						scrollTrigger: { trigger: $el, start, once: true },
 						// The ease makes the title look done well before the tween ends
 						onUpdate() {
@@ -85,6 +87,7 @@ if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
 		const $image = $el.querySelector('img');
 
 		gsap.timeline({
+			delay: parseFloat($el.dataset.revealDelay) || 0,
 			scrollTrigger: { trigger: $el, start, once: true },
 			onComplete: () => {
 				done($el);

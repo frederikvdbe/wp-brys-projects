@@ -7,6 +7,20 @@
 
 @media (width >= theme(--breakpoint-xl)) {
 	.b-showcase {
+		// Each line of the title starts one column further to the right
+		&__title {
+			display: grid;
+			grid-template-columns: subgrid;
+		}
+
+		&__line {
+			grid-column: 1 / -1;
+
+			& + & {
+				grid-column: 2 / -1;
+			}
+		}
+
 		// The text column fills the row next to the image. Its second row draws the
 		// panel background from under the text down to where the panel starts.
 		&__text {
@@ -48,6 +62,10 @@
 	.b-showcase {
 		> .o-container:first-child {
 			@apply pt-16;
+		}
+
+		&__line {
+			display: block;
 		}
 
 		h1 {
