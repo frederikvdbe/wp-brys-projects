@@ -4,16 +4,18 @@
  *
  * @var array  $args
  * @var array  $tiles   list of array( 'image' => string, 'ratio' => 'w/h', 'alt' => string, 'caption' => ?string, 'feature' => ?bool )
+ * @var string $intro   Optional text above the second photo of the first row
  * @var string $classes
  */
 extract( $args );
 $classes = $classes ?? '';
+$intro   = $intro ?? '';
 
 // Row layouts, used in turn. Each slot is a grid column start and span, with an
 // optional drop in rem. Drop slots also move a little on scroll. The first row
-// starts with a narrow photo and a wide one lower down.
+// starts with a narrow photo and a wide one, with the optional intro above it.
 $layouts = array(
-	array( 'align' => 'start', 'slots' => array( array( 1, 4 ), array( 6, 7, 7 ) ) ),
+	array( 'align' => 'start', 'slots' => array( array( 1, 4 ), array( 6, 7 ) ) ),
 	array( 'align' => 'start', 'slots' => array( array( 5, 5 ) ) ),
 	array( 'align' => 'start', 'slots' => array( array( 2, 4 ), array( 7, 6, 14 ) ) ),
 	array( 'align' => 'end', 'slots' => array( array( 1, 5 ), array( 7, 5 ) ) ),
@@ -83,7 +85,13 @@ while ( $i < count( $tiles ) ) {
 			<div class="b-wall__row b-wall__row--<?= $row['type']; ?> o-grid"
 				 style="--row-gap: <?= $r ? $row_gaps[ $r % count( $row_gaps ) ] : 0; ?>rem">
 
-				<?php foreach ( $row['tiles'] as $tile ) : ?>
+				<?php foreach ( $row['tiles'] as $t => $tile ) : ?>
+					<?php $has_intro = $intro && $r === 0 && $t === 1; ?>
+					<?php if ( $has_intro ) : ?>
+						<div class="b-wall__lead" style="--column: <?= $tile['column']; ?>">
+							<p class="b-wall__intro" data-reveal="fade"><?= $intro; ?></p>
+					<?php endif; ?>
+
 					<figure class="b-wall__tile js-wall-tile"
 							<?php if ( ! empty( $tile['drop'] ) ) : ?>data-speed="-0.08"<?php endif; ?>
 							style="--ratio: <?= $tile['ratio']; ?>;<?php if ( ! empty( $tile['column'] ) ) : ?> --column: <?= $tile['column']; ?>; --drop: <?= $tile['drop']; ?>rem;<?php endif; ?>">
@@ -101,6 +109,10 @@ while ( $i < count( $tiles ) ) {
 						</figcaption>
 
 					</figure>
+
+					<?php if ( $has_intro ) : ?>
+						</div>
+					<?php endif; ?>
 				<?php endforeach; ?>
 
 			</div>
