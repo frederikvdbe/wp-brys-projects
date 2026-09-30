@@ -1,13 +1,16 @@
 <?php
 /**
- * One large image that bleeds to the left or right edge, with an optional caption.
+ * One large image that bleeds to the left or right edge, or sits centred, with an
+ * optional caption.
  *
  * @var array  $args
  * @var string $image
  * @var string $image_alt
- * @var string $align    'left' or 'right': the side where the image bleeds to the edge
+ * @var string $align    'left' or 'right': the side where the image bleeds to the edge.
+ *                       'center': all twelve columns, lower, no bleed
  * @var string $caption  Optional
- * @var bool   $overhang Optional, the image hangs 10rem into the panel below it
+ * @var bool   $overhang Optional, the image hangs 10rem into the panel below it,
+ *                       half its height when centred
  * @var string $classes
  */
 extract( $args );
@@ -21,7 +24,7 @@ if ( ! empty( $overhang ) ) {
 
 <section class="b-figure b-figure--<?= $align; ?> <?= $classes; ?>">
 	<div class="o-container o-grid">
-		<figure class="b-figure__image <?= $align === 'right' ? 'sm:col-span-9 sm:col-start-4' : 'sm:col-span-9'; ?>">
+		<figure class="b-figure__image <?= array( 'right' => 'sm:col-span-9 sm:col-start-4', 'left' => 'sm:col-span-9', 'center' => 'sm:col-span-12' )[ $align ]; ?>">
 			<div data-reveal="image">
 				<img class="w-full h-[52rem] object-cover"
 					 src="<?= get_template_directory_uri(); ?>/assets/dist/images/<?= $image; ?>"

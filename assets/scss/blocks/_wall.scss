@@ -145,3 +145,16 @@
 	}
 }
 
+
+// Page intro variant: ten columns with a one column offset
+@media (width >= theme(--breakpoint-xl)) {
+	.b-page-intro--narrow {
+		.b-page-intro__title {
+			grid-column: 2 / span 7;
+		}
+
+		.b-page-intro__text {
+			grid-column: 9 / span 3;
+		}
+	}
+}

@@ -12,7 +12,7 @@ get_header();
 ) ); ?>
 
 <?php get_template_part( 'partials/blocks/figure', null, array(
-	'classes'   => 'mt-[9rem]',
+	'classes'   => 'mt-[5rem]',
 	'image'     => 'detail-groot.jpg',
 	'image_alt' => 'Badkamer in travertin',
 	'align'     => 'right',

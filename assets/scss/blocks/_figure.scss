@@ -15,6 +15,15 @@
 
 		margin-bottom: -10rem;
 	}
+
+	// Centred, the image is lower and hangs half its height into the panel
+	&--center img {
+		height: 42rem;
+	}
+
+	&--center#{&}--overhang {
+		margin-bottom: -21rem;
+	}
 }
 
 @media (width < theme(--breakpoint-xl)) {

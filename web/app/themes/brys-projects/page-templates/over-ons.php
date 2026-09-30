@@ -7,22 +7,23 @@ get_header();
 ?>
 
 <?php get_template_part( 'partials/blocks/page-intro', null, array(
-	'title' => 'Wie<br>wij zijn',
-	'text'  => 'Brys Projects is een afwerkingsbedrijf uit Sint-Denijs-Westrem. Wij zijn gespecialiseerd in binnenafwerking, badkamers en microcement.',
+	'classes' => 'b-page-intro--narrow',
+	'title'   => 'Wie<br>wij zijn',
+	'text'    => 'Brys Projects is een afwerkingsbedrijf uit Sint-Denijs-Westrem. Wij zijn gespecialiseerd in binnenafwerking, badkamers en microcement.',
 ) ); ?>
 
 <?php get_template_part( 'partials/blocks/figure', null, array(
-	'classes'   => 'mt-[9rem]',
+	'classes'   => 'mt-[5rem]',
 	'image'     => 'hero.jpg',
 	'image_alt' => 'Keuken met microcementafwerking',
-	'align'     => 'left',
+	'align'     => 'center',
 	'overhang'  => true,
 ) ); ?>
 
 <div class="c-panel c-panel--left [--panel-inset-bottom:27rem]">
 
 	<?php get_template_part( 'partials/blocks/lead', null, array(
-		'classes' => 'pt-[24rem]',
+		'classes' => 'pt-[35rem]',
 		'eyebrow' => 'Ons verhaal',
 		'lead'    => 'Het verschil zit in de laatste laag. Daarom doen wij de afwerking altijd zelf.',
 		'columns' => array(

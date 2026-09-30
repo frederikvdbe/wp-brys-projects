@@ -26,12 +26,11 @@ $tiles = array(
 ?>
 
 <?php get_template_part( 'partials/blocks/page-intro', null, array(
-	'spacing' => 'pt-[7.5rem]',
 	'title'   => 'Elke ruimte,<br>haar eigen karakter',
 ) ); ?>
 
 <?php get_template_part( 'partials/blocks/wall', null, array(
-	'classes' => 'mt-[9rem]',
+	'classes' => 'mt-[5rem]',
 	'intro'   => 'Een greep uit ons werk. Badkamers, vloeren, keukens en meubels, met de hand afgewerkt in microcement en natuurlijke materialen.',
 	'tiles'   => $tiles,
 ) ); ?>
