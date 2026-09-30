@@ -62,8 +62,9 @@
 
 @media (width < theme(--breakpoint-lg)) {
 	.b-index {
-		&__row {
-			@apply gap-y-3;
+		// .o-grid sets a larger gap, so this needs the extra class
+		&__row.o-grid {
+			@apply gap-y-4;
 
 			> * {
 				grid-column: 1 / -1;

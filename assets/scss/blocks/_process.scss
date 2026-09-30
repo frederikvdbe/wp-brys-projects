@@ -1,6 +1,6 @@
 @media (width < theme(--breakpoint-xl)) {
 	.b-process {
-		@apply mt-32;
+		@apply mt-32 pt-0;
 
 		h2 {
 			font-size: clamp(2.25rem, 5vw, 4rem);
@@ -28,8 +28,13 @@
 			grid-column: 1 / -1;
 		}
 
-		&__item {
-			@apply gap-y-3;
+		// .o-grid sets a larger gap, so this needs the extra class
+		&__item.o-grid {
+			@apply gap-y-4;
+
+			> .c-eyebrow {
+				@apply pt-0;
+			}
 		}
 
 		&__text {

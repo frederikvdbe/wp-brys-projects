@@ -22,7 +22,7 @@ $header_classes = $header_classes ?? '';
 	<div class="o-container">
 		<div class="c-site-header__inner pt-[0.25rem]">
 
-			<div class="justify-self-start">
+			<div class="c-site-header__contact justify-self-start">
 				<a href="/contact" class="c-link c-link--sm">Contacteer ons</a>
 			</div>
 

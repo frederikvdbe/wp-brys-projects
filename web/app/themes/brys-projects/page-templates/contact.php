@@ -42,7 +42,7 @@ get_header();
 		array(
 			'id'    => 'vraag',
 			'label' => 'Een vraag',
-			'text'  => 'Stel uw vraag. Wij antwoorden per e-mail of bellen u terug.',
+			'text'  => 'Stel uw vraag. Wij antwoorden per <span class="whitespace-nowrap">e-mail</span> of bellen u terug.',
 			'form'  => 'Contact',
 		),
 		array(

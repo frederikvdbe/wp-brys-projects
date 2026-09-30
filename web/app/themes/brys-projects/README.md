@@ -33,6 +33,8 @@ the design becomes `7.5rem`. The root font size does the scaling:
   (`assets/scss/elements/_root.scss`), so the whole design scales down as one piece.
 - Under 1280px: the root font size goes back to 16px and the blocks switch to a
   stacked layout. Those rules live in `assets/scss/blocks/`.
+- Under 768px (a phone): the header drops the contact link and shows the logo on
+  the left, and the page titles scale with the screen width.
 
 ## Colors and fonts
 

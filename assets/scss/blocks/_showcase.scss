@@ -104,3 +104,10 @@
 		}
 	}
 }
+
+// Same title size as the other pages on a phone
+@media (width < theme(--breakpoint-md)) {
+	.b-showcase h1 {
+		font-size: clamp(2.25rem, 10.5vw, 2.75rem);
+	}
+}

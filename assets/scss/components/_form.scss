@@ -25,6 +25,11 @@ $form-inputs: 'input:not([type="checkbox"]):not([type="radio"]):not([type="submi
 
 		column-gap: 2.5rem;
 		row-gap: 2.75rem;
+
+		// Every field is full width on a phone, and twelve gaps do not fit
+		@media (width < theme(--breakpoint-sm)) {
+			column-gap: 0;
+		}
 	}
 
 	.gfield {

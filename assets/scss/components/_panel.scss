@@ -29,9 +29,24 @@
 	}
 }
 
+// On smaller screens the panel runs to the end of its last block. The margin of
+// its first block stays inside it, and the space under the last block is the same
+// on every page.
 @media (width < theme(--breakpoint-xl)) {
 	.c-panel {
 		--panel-inset-left: 1rem;
 		--panel-inset-bottom: 0;
+
+		display: flow-root;
+		padding-bottom: 6rem;
+
+		> :last-child {
+			padding-bottom: 0;
+		}
+	}
+
+	// The scroll hint only makes sense next to the full screen hero
+	[data-scroll-hint] {
+		display: none;
 	}
 }

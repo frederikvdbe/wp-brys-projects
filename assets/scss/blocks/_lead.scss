@@ -57,8 +57,3 @@
 	}
 }
 
-@media (width < theme(--breakpoint-md)) {
-	.b-lead {
-		@apply pt-16;
-	}
-}

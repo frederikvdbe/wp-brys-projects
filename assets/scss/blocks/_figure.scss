@@ -30,7 +30,8 @@
 	.b-figure {
 		@apply mt-16;
 
-		&--overhang {
+		&--overhang,
+		&--center#{&}--overhang {
 			margin-bottom: 0;
 		}
 

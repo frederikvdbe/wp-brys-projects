@@ -10,3 +10,12 @@
 		line-height: 1;
 	}
 }
+
+// Where a heading wraps on a smaller screen, keep its lines about the same length
+@media (width < theme(--breakpoint-xl)) {
+	h1,
+	h2,
+	h3 {
+		text-wrap: balance;
+	}
+}

@@ -109,4 +109,13 @@
 			margin-top: 4rem;
 		}
 	}
+
+	// Larger tap area for the small legal links, without moving them
+	@media (pointer: coarse) {
+		&__legal a {
+			display: inline-block;
+			padding-block: 0.5rem;
+			margin-block: -0.5rem;
+		}
+	}
 }

@@ -48,3 +48,31 @@
 		}
 	}
 }
+
+// On a phone the contact link goes, the logo moves to the left and the bar is lower
+@media (width < theme(--breakpoint-md)) {
+	.c-site-header {
+		&__inner {
+			grid-template-columns: 1fr auto;
+			height: 5rem;
+		}
+
+		&__contact {
+			display: none;
+		}
+
+		// A 44px tap area around the small label
+		&__toggle {
+			padding-block: 0.875rem;
+			margin-block: -0.875rem;
+		}
+
+		&__logo {
+			justify-self: start;
+
+			img {
+				width: 6.25rem;
+			}
+		}
+	}
+}
