@@ -49,7 +49,7 @@ if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
 					done($el);
 
 					return gsap.from(self.lines, {
-						yPercent: 110,
+						y: (i, $line) => $line.parentElement.offsetHeight * 1.1,
 						duration: 1.2,
 						ease: 'expo.out',
 						stagger: 0.08,
