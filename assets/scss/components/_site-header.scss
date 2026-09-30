@@ -22,6 +22,10 @@
 			@apply flex items-center cursor-pointer;
 
 			gap: 0.625rem;
+
+			&:hover .c-site-header__bars span:last-child {
+				width: 100%;
+			}
 		}
 
 		&__bars {
@@ -35,6 +39,7 @@
 
 				height: 1.5px;
 				background: var(--color-ink);
+				transition: width .6s $easing-outQuint;
 
 				&:last-child {
 					width: 1.125rem;
