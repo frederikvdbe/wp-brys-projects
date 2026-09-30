@@ -48,6 +48,8 @@ jobs:
                     --exclude /.agents/ \
                     --exclude /.htaccess \
                     --exclude /.env \
+                    --exclude /.env.example \
+                    --exclude /.editorconfig \
                     --exclude /assets/ \
                     --exclude /copy/ \
                     --exclude /dev/ \
