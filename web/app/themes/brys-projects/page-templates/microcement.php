@@ -12,6 +12,7 @@ get_header();
 	'link'      => array( 'label' => 'Bekijk onze realisaties', 'url' => '/realisaties' ),
 	'image'     => 'toepassingen.jpg',
 	'image_alt' => 'Detail van een meubel afgewerkt in microcement',
+	'image_small' => array( 'file' => 'detail-zwembad.jpg', 'alt' => 'Binnenzwembad met betonnen balken' ),
 ) ); ?>
 
 <div class="c-panel c-panel--left" style="--panel-inset-bottom: 0">

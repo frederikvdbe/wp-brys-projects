@@ -5,6 +5,43 @@
 	}
 }
 
+@media (width >= theme(--breakpoint-xl)) {
+	.b-showcase {
+		// The text column fills the row next to the image. Its second row draws the
+		// panel background from under the text down to where the panel starts.
+		&__text {
+			display: grid;
+			grid-template-columns: subgrid;
+			grid-template-rows: auto 1fr;
+
+			&::after {
+				content: '';
+				position: relative;
+				z-index: -1;
+				grid-column: 1 / -1;
+				grid-row: 2;
+				margin-left: -100vw;
+				margin-right: calc((max(var(--grid-gutter), (100vw - var(--grid-max-width)) / 2) - 2.5rem) * -1);
+				background: var(--color-shell);
+			}
+		}
+
+		&__content {
+			grid-column: span 3;
+			margin-top: -0.375rem; // the line height adds space above the first line
+			padding-bottom: 4rem; // same as the grid gap between image and text
+		}
+
+		// Bottom lines up with the big image, which hangs 10rem into the panel
+		&__small {
+			grid-column: 1 / span 3;
+			grid-row: 2;
+			align-self: end;
+			margin-bottom: -10rem;
+		}
+	}
+}
+
 // From the tablet breakpoint down the image goes full width and the text moves
 // under it. The overlap with the panel is off here.
 @media (width < theme(--breakpoint-xl)) {
@@ -30,6 +67,15 @@
 			margin-bottom: 0;
 			aspect-ratio: 4 / 3;
 			margin-inline: calc(var(--grid-gutter) * -1);
+		}
+
+		&__small {
+			@apply mt-12;
+
+			img {
+				height: auto;
+				aspect-ratio: 362 / 485;
+			}
 		}
 
 		&__text {
